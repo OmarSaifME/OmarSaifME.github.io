@@ -48,13 +48,39 @@
         <img src="your-picture.jpg" alt="Profile Picture">
     </header>
 
-    <main>
-        <p>Mechanical Engineer with an aptitude in mathematical modelling and design, alongside hands on industrial experience in process optimization, manufacturing, research & development. Worked on more than 130 projects during my tenure at two different companies, spanning three years. The innate ability to pick up any technical or academic tools (software) gives me an edge to explore my ideas in multiple domains. To wit, I am well versed in multi-dimensional design and development tools including (but not limited to) SolidWorks, AutoCAD, Autodesk Inventor, ANSYS, Python and so on. I am also very keen on the advancements of Artificial Intelligence and their impacts on scientific advancements, in domains like CAD and FEA for example. And as an added advantage, my work and design thinking mentality are training me to learn and recognize patterns in both through literary works, and under workshop protocols.
+<main class="grid-container">
+    <div class="about-box">
+        <p>
+            Mechanical Engineer with an aptitude in mathematical modelling and design, alongside hands on industrial experience in process optimization, manufacturing, research & development. Worked on more than 130 projects during my tenure at two different companies, spanning three years. The innate ability to pick up any technical or academic tools (software) gives me an edge to explore my ideas in multiple domains. To wit, I am well versed in multi-dimensional design and development tools including (but not limited to) SolidWorks, AutoCAD, Autodesk Inventor, ANSYS, Python and so on. I am also very keen on the advancements of Artificial Intelligence and their impacts on scientific advancements, in domains like CAD and FEA for example. And as an added advantage, my work and design thinking mentality are training me to learn and recognize patterns in both through literary works, and under workshop protocols.
 
-Looking forward, I strongly believe scientific advancements is the most paramount metric in ensuring a growing and sustainable environment that will improve both the quality of the businesses of the future, and the quality of day-to-day life for people.
-I am excited and sincerely hope to be a part of it; with however little capacity I have.
-</p>
-    </main>
+            Looking forward, I strongly believe scientific advancements is the most paramount metric in ensuring a growing and sustainable environment that will improve both the quality of the businesses of the future, and the quality of day-to-day life for people.
+            I am excited and sincerely hope to be a part of it; with however little capacity I have.
+
+            Thank you for visiting my website. I hope you have a wonderful day.
+
+        </p>
+    </div>
+</main>
+
+<style>
+/* Grid setup for main content */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+    gap: 20px; /* space between columns */
+    padding: 20px;
+}
+
+/* The box that holds your About Me text */
+.about-box {
+    grid-column: 3 / 10; /* spans columns 3 to 10 */
+    background-color: #f4f4f4; /* light gray box */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+
 
     <nav>
         <a href="projects.html">Projects</a>
