@@ -1,94 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="g4.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madlad's Madboard</title>
+    <title>Home: Portfolio of Omar Saif</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            text-align: center;
-            padding: 2rem;
-        }
         header img {
             max-width: 150px;
             border-radius: 50%;
         }
-        nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #333;
-            display: flex;
-            justify-content: space-around;
-            padding: 0.5rem 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        main {
-            flex: 1;
-            padding: 1rem;
-        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>OMAR SAIF</h1>
-        <p>Madlad's Madboard: Skeleton Initialized</p>
-        <img src="your-picture.jpg" alt="Profile Picture">
+        <h1 class="typewriter-container">Omar Saif: Portfolio Website</h1>
+        <p class="glitch-text">Mechanical Engineer | CFD Enthusiast | Systems Overthinker</p>
     </header>
+
+    <div class="hover-button-container">
+    <button class="hover-button">f(x)</button>
+    <div class="hover-description">
+    Fun Fact: When you hover over the navigation buttons, they oscilate at a rate of 5 Hz (or 300 BPM)
+  </div>
+</div>
 
 <main class="grid-container">
     <div class="about-box">
-        <p>
-            Mechanical Engineer with an aptitude in mathematical modelling and design, alongside hands on industrial experience in process optimization, manufacturing, research & development. Worked on more than 130 projects during my tenure at two different companies, spanning three years. The innate ability to pick up any technical or academic tools (software) gives me an edge to explore my ideas in multiple domains. To wit, I am well versed in multi-dimensional design and development tools including (but not limited to) SolidWorks, AutoCAD, Autodesk Inventor, ANSYS, Python and so on. I am also very keen on the advancements of Artificial Intelligence and their impacts on scientific advancements, in domains like CAD and FEA for example. And as an added advantage, my work and design thinking mentality are training me to learn and recognize patterns in both through literary works, and under workshop protocols.
-
-            Looking forward, I strongly believe scientific advancements is the most paramount metric in ensuring a growing and sustainable environment that will improve both the quality of the businesses of the future, and the quality of day-to-day life for people.
-            I am excited and sincerely hope to be a part of it; with however little capacity I have.
-
-            Thank you for visiting my website. I hope you have a wonderful day.
+        <p>I specialize in mathematical modelling for systems and products, mechanical design and process optimization. Backed by 3 years of hands-on experience across 130+ projects in heavy industry. My niche? Breaking systems to rebuild them better.</p>
+<b>Toolbox</b>
+        <br>&emsp;<strong>- Design:</strong> SolidWorks, AutoCAD, Inventor, Fusion 360
+    <br>&emsp;<strong>- Simulation:</strong> ANSYS (CFD, FEA)</li>
+    <br>&emsp;<strong>- Presentation:</strong> KeyShot, SW Visualize, PhotoView 360</li>
+    <br>&emsp;<strong>- Data & Computation:</strong> Python, HTML, CSS, C++, Vibe</li>
+    <p><strong>Research Interests:</strong> Intelligent Mechanical Designs, Biomimicry & Bio-Inspired Design, Generative & Point-Cloud 3D Modelling, AI’s role in engineering & pattern recognition (both in literature and laboratories)</li>
+        <p><b>Mission:</b>
+Scientific progress isn’t just about innovation. It’s about scalable and sustainable impact. I’m here to bridge the gap between technical rigor and real-world utility. Or at least, I hope I will be able to play a small part in that direction.
+<p>(Also, I learn fast. GPA not included for your mental safety)</p>
 
         </p>
     </div>
 </main>
 
 <style>
-/* Grid setup for main content */
+
+    /* Grid setup for main content */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+    grid-template-columns: repeat(25, 1fr); /* x-column grid */
+    grid-auto-rows: min-content;
     gap: 20px; /* space between columns */
-    padding: 20px;
+    padding: 0px;
 }
 
 /* The box that holds your About Me text */
 .about-box {
-    grid-column: 3 / 10; /* spans columns 3 to 10 */
-    background-color: #f4f4f4; /* light gray box */
-    padding: 20px;
+    grid-column: 3 / 10; /* spans columns x to y */
+    grid-row: 5;
+    background-color: #1A1A1A; /* box color */
+    padding: 10px 20px 15px 20px; /* top right bottom left */
     border-radius: 8px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 10px #0A0A0A;
+    max-width: 800px;
+    width: 100%;
+    display: inline-block;
 }
 </style>
 
 
     <nav>
-        <a href="projects.html">Projects</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="leftbar.html" class="home-button">| | |</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
         <a href="ideas.html">Ideas</a>
         <a href="profile.html">Profile</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="projects.html">Projects</a>
     </nav>
 </body>
 </html>
