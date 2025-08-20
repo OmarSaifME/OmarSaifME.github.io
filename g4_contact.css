@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('bwv.jpg');
+  background-image: url('cat.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -118,13 +118,13 @@ header {
   left: 50%;
   transform: translateX(30%);
   bottom: calc(-100% + 20px); /* Positions above button */
-  width: min(280px, 90vw);
+  width: min(290px, 90vw);
   padding: 0.8rem;
   background: #1E1E1E;
   color: white;
-  border: 0px solid #00CED1;
+  border: 0px solid #7CFC00;
   border-radius: 8px;
-  box-shadow: 0 0 5px #00CED1;
+  box-shadow: 0 0 5px #7CFC00;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -150,7 +150,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
   }
-}  
+}
 
 nav {
   position: fixed;
@@ -382,3 +382,206 @@ nav a.active {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+* {
+  box-sizing: border-box; /* Prevents padding/margin surprises */
+  outline: 0px solid red !important; /* Debugging (remove later) */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, san sherif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    color: white; /* main text color */
+    text-shadow: 0 0 5px rgba(0, 255, 157, 0.3); /* Halo effect */
+    transition: color 0.4s; /* Smooth shift */
+
+    background-image: url('bwr.jpg');
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+            color: #7CFC00;
+            text-align: right;
+            padding: 2rem;
+        }
+.home-button {
+  position: fixed;
+  top: 100px;
+  right: 13px;
+  padding: 0.5rem 1rem;
+  background: #121212;
+  color: #00CED1; /* home button color */
+  border: 0px solid #FF5F1F; /* ANSYS rage */
+  text-decoration: none;
+  z-index: 9999;
+  transition: 0.3s;
+}
+
+.home-button:hover {
+  background: #;
+  color: #;
+  box-shadow: 0 0 15px #; /* MBA pink glow */
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Fine-tune alignment */
+  width: 70px; /* Slim fit */
+  transition: width 0.3s;
+  height: 1080px;
+  background: #121212;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: center;
+  padding: 1.5rem 1.5rem;
+  gap: .8rem; /* Space between Buttons */
+  border-radius: 0 10px 10px 0; /* Rounded right edges */
+  box-shadow: 3px 0 10px #4BB800; /* nav bar glow */
+  z-index: 1000;
+
+}
+
+nav a {
+  margin: 0.9rem 0;
+  writing-mode: vertical-rl; /* Text sideways */
+  transform: rotate(180deg) translateX(-3px); /* Read top-to-bottom */
+  color: #00CED1; /* font color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #4BB800; /* glow color */
+  text-shadow: 0 0 8px white; /* Glitch effect */
+}
+
+nav a:hover {
+  animation: vibrate .2s linear infinite;
+}
+@keyframes vibrate {
+  0% { transform: rotate(180deg) translateX(0); }
+  25% { transform: rotate(180deg) translateX(-2px); }
+  50% { transform: rotate(180deg) translateX(2px); }
+  75% { transform: rotate(180deg) translateX(-2px); }
+  100% { transform: rotate(180deg) translateX(0); }
+}  
+
+/* CONTAINER (FOR POSITIONING FLEXIBILITY) */
+.hover-button-container {
+  position: absolute; /* Move freely */
+  top: 890px; /* Adjust */
+  right: 1855px; /* Adjust */
+  z-index: 9999; /* Nuclear priority */
+}
+
+/* BUTTON STYLE */
+.hover-button {
+  font-size: 18px; /* Pixel-precise control */  
+  background: #121212;
+  color: #00CED1; /* text color */
+  border: 0px solid #00CED1; /* border color */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.hover-button:hover {
+  font-size: 19px;
+  text-shadow: 0 0 10px #7CFC00; /* text glow */
+}
+
+/* HOVER DESCRIPTION (HIDDEN BY DEFAULT) */
+.hover-description {
+  position: absolute;
+  bottom: -50%; /* Appearing Position Relative to Text */
+  left: 90px;
+  width: 470px;
+  padding: 0.8rem;
+  background: #1E1E1E;
+  color: white; /* text color */
+  border: 0px solid #4BB800; /* border */
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none; /* Prevents flicker */
+}
+
+/* SHOW DESCRIPTION ON HOVER */
+.hover-button:hover + .hover-description {
+  opacity: 1;
+}
+
+/* Add this to your stylesheet */
+.glitch-text {
+  font-family: 'Courier New', monospace; /* Engineer vibe */
+  position: relative;
+  animation: glitch 7s infinite linear;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 rgba(255,0,0,0.7), -2px 0 rgba(0,255,255,0.7);
+    transform: translate(0);
+  }
+  20% {
+    text-shadow: -3px 0 rgba(255,0,0,0.7), 3px 0 rgba(0,255,255,0.7);
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    text-shadow: 1px 0 rgba(255,0,0,0.7), -1px 0 rgba(0,255,255,0.7);
+    transform: translate(2px, -1px);
+  }
+  60% {
+    text-shadow: 4px 0 rgba(255,0,0,0.7), -4px 0 rgba(0,255,255,0.7);
+    transform: translate(-1px, 2px);
+  }
+  80% {
+    text-shadow: -1px 0 rgba(255,0,0,0.7), 1px 0 rgba(0,255,255,0.7);
+    transform: translate(1px, -2px);
+  }
+  100% {
+    text-shadow: 2px 0 rgba(255,0,0,0.7), -2px 0 rgba(0,255,255,0.7);
+    transform: translate(0);
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.glitch-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40) infinite alternate;
+}
+
+.typewriter-container {
+  overflow: hidden; /* Hides overflow */
+  border-right: 3px solid red; /* Cursor effect */
+  white-space: nowrap; /* Keeps text on one line */
+  margin-left: auto; /* Pushes to far right */
+  margin-right: 0;   /* Ensures no weird spacing */
+  text-align: right; /* Aligns cursor to the right */
+  letter-spacing: 0.15em; /* Typewriter vibe */
+  animation: typing 6s steps(80, end), blink-caret 1s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor blink */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}

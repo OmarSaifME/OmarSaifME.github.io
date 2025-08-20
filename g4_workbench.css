@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box; /* Good call keeping this */
-  /*outline: 1px solid red; /* Uncomment ONLY when debugging */
+  /* outline: 1px solid red; */ /* Uncomment ONLY when debugging */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('bwv.jpg');
+  background-image: url('hex.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -86,7 +86,7 @@ header {
 
 /* BUTTON STYLES (unchanged) */
 .hover-button {
-  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-size: clamp(1.9rem, 2vw, 1.6rem);
   background: transparent;
   color: #00CED1;
   border: 0;
@@ -94,6 +94,7 @@ header {
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative; /* Added for z-index control */
+  margin-left: 6px;
 }
 
 /* Button hover effects */
@@ -118,18 +119,18 @@ header {
   left: 50%;
   transform: translateX(30%);
   bottom: calc(-100% + 20px); /* Positions above button */
-  width: min(280px, 90vw);
+  width: min(380px, 90vw);
   padding: 0.8rem;
   background: #1E1E1E;
   color: white;
-  border: 0px solid #00CED1;
+  border: 0px solid #4BB800;
   border-radius: 8px;
   box-shadow: 0 0 5px #00CED1;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   pointer-events: none;
-  text-align: left;
+  text-align: center;
   z-index: 10000; /* Higher than button */
 }
 
@@ -150,7 +151,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
   }
-}  
+}
 
 nav {
   position: fixed;
@@ -183,7 +184,7 @@ nav a {
   color: #00CED1;
   text-decoration: none;
   font-weight: bold;
-  padding: 15px 15px; /* Better click area */
+  padding: 10px 0; /* Better click area */
   transition: all 0.3s;
 }
 
@@ -282,7 +283,7 @@ nav a.active {
 
 .about-box {
     /* Default positioning (large screens) */
-    grid-column: 5 / 12;
+    grid-column: 3 / 10;
     grid-row: 5;
     background-color: #1A1A1A;
     padding: 10px 20px 15px 20px;
@@ -333,23 +334,6 @@ nav a.active {
     4px 4px 0 #00CED1; /* "Sticky note" offset */
   transition: all 0.3s ease;
   max-width: 300px; /* Control card width */
-  margin-left: 400px;
-  margin-top: -600px;
-  grid-row: 2;
-  grid-column: 11 / 14;
-  height: auto !important; /* Prevent vertical stretch */
-  align-self: start;       /* Anchor to top of grid cell */
-  margin-bottom: 0px;     /* Add breathing room below */
-}
-
-/* First card */
-.project-card:first-child {
-  grid-row: 1; /* First card row */
-}
-
-/* Second card */
-.project-card:nth-child(2) {
-  grid-row: 8; /* Second card row */
 }
 
 /* Hover Glow (Reuse your existing hover styles) */
@@ -362,19 +346,15 @@ nav a.active {
 }
 
 
-/* REUSE YOUR .grid-container with tweaks  */
+/* REUSE YOUR .grid-container with tweaks */
 .projects-grid {
   display: grid;
-  grid-template-rows: auto;
-  grid-auto-rows: 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem; /* Space between cards */
   padding: 2rem;
   width: 100%;
-  max-width: 1600px; /* Adjust based on your layout */
+  max-width: 1200px; /* Adjust based on your layout */
   margin: 0 auto; /* Center the grid */
-  min-height: 0 !important; /* Grids often create extra height */
-  height: 0 !important;
 }
 
 /* Mobile: 1 card/row */

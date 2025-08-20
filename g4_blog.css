@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('bwv.jpg');
+  background-image: url('stp.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -129,7 +129,7 @@ header {
   visibility: hidden;
   transition: all 0.3s ease;
   pointer-events: none;
-  text-align: left;
+  text-align: center;
   z-index: 10000; /* Higher than button */
 }
 
@@ -150,7 +150,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
   }
-}  
+}
 
 nav {
   position: fixed;

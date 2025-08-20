@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('bwv.jpg');
+  background-image: url('unc.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -31,7 +31,7 @@ body {
 }
 
 header {
-            color: #7CFC00;
+            color: #1A1A1A;
             text-align: right;
             padding: clamp(1rem, 3vw, 2rem); /* Scales between 1rem-2rem */
         }
@@ -39,7 +39,7 @@ header {
         /* Cursor blink */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #7CFC00; }
+  50% { border-color: #1A1A1A; }
 }
 
 .home-button {
@@ -129,7 +129,7 @@ header {
   visibility: hidden;
   transition: all 0.3s ease;
   pointer-events: none;
-  text-align: left;
+  text-align: center;
   z-index: 10000; /* Higher than button */
 }
 
@@ -150,7 +150,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
   }
-}  
+}
 
 nav {
   position: fixed;
