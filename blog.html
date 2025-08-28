@@ -15,8 +15,18 @@
 <body>
     <header>
         <h1 class="typewriter-container">Blog</h1>
-        <h2 class="glitch-text">You Know, I'm More of a Writer Myself</h2>
+        <p class="glitch-text">Writing keeps me grounded I suppose</p>
     </header>
+
+    <!-- PROJECTS SECTION -->
+<section class="projects-grid">
+  <a href="#" class="project-card" onclick="goBack()"> <!-- Whole card is clickable! -->
+    <h3><b>Next Update</b></br>September 15, 2025</h3>
+    <p><em>(click to go back)</em></p>
+      <p2><em></em></p2>
+    <!-- RIP "Read More" button -->
+  </a>
+</section>
 
 <a href="index.html" class="home-button"> 🏘️︎ </a>
 
@@ -25,9 +35,16 @@
         <a href="blog.html">Blog</a>
         <a href="ideas.html">Ideas</a>
         <a href="profile.html">Profile</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="forge.html">Forge</a>
         <a href="workbench.html">Workbench</a>
     </nav>
+
+<script>
+function goBack() {
+  event.preventDefault(); // Stop default link behavior
+  window.history.back(); // Browser back button functionality
+}
+</script>
 
 </body>
 </html>

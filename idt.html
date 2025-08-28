@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="g4_gd.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twins: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Forge: Industrial Digital Twins</h1>
+        <p class="glitch-text">Digital Twins (1:1) of Industrial Machines</p>
+    </header>
+
+<section class="projects-grid">
+<a href="dsg.html" class="project-card gallery-card">
+  <img src="img/7_1.png" alt="Precision render description">
+  <div class="card-text-content">
+    <h3></br>Diesel Generator</h3>
+    <p></p>
+  </div>
+</a>
+
+    <a href="vrf.html" class="project-card gallery-card">
+  <img src="img/8_1.png" alt="Precision render description">
+  <div class="card-text-content">
+    <h3></br>VRF Outdoor Unit</h3>
+    <p></p>
+  </div>
+</a>
+
+        <a href="iem.html" class="project-card gallery-card">
+  <img src="img/9_1.png" alt="Precision render description">
+  <div class="card-text-content">
+    <h3></br>Electric Motor</h3>
+    <p></p>
+  </div>
+</a>
+
+    <a href="tfm.html" class="project-card gallery-card">
+  <img src="img/10_1.png" alt="Precision render description">
+  <div class="card-text-content">
+    <h3></br>Transformer</h3>
+    <p></p>
+  </div>
+</a>
+
+        <a href="erv.html" class="project-card gallery-card">
+  <img src="img/11_1.png" alt="Precision render description">
+  <div class="card-text-content">
+    <h3>Energy Recovery Ventilator</h3>
+    <p></p>
+  </div>
+</a>
+
+    <a href="clr.html" class="project-card gallery-card">
+  <img src="img/12_1.png" alt="Precision render description">
+  <div class="card-text-content">
+    <h3></br>Industrial Chiller</h3>
+    <p></p>
+  </div>
+</a>
+          <a href="forge.html" class="project-card2"> <!-- Whole card is clickable! -->
+    <h3>Go Back to Forge</h3>
+    <p></p>
+      <p2></p2>
+      <!-- RIP "Read More" button -->
+  </a>
+</section>
+
+<a href="index.html" class="home-button"> 🏘️︎ </a>
+
+    <nav>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="profile.html">Profile</a>
+        <a href="forge.html">Forge</a>
+        <a href="workbench.html">Workbench</a>
+    </nav>
+
+<script>
+function expandCard(card) {
+  // Create or activate backdrop
+  let backdrop = document.querySelector('.overlay-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'overlay-backdrop';
+    backdrop.onclick = () => closeAllCards();
+    document.body.appendChild(backdrop);
+  }
+
+  // Close any already open cards
+  closeAllCards();
+
+  // Open this card
+  const expandedContent = card.querySelector('.card-expanded');
+  expandedContent.classList.add('active');
+  backdrop.classList.add('active');
+
+  // Prevent body scrolling
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAllCards() {
+  document.querySelectorAll('.card-expanded.active').forEach(expanded => {
+    expanded.classList.remove('active');
+  });
+
+  const backdrop = document.querySelector('.overlay-backdrop');
+  if (backdrop) backdrop.classList.remove('active');
+
+  // Restore body scrolling
+  document.body.style.overflow = 'auto';
+}
+
+function closeCard(expandedContent) {
+  expandedContent.classList.remove('active');
+  const backdrop = document.querySelector('.overlay-backdrop');
+  if (backdrop) backdrop.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+</script>
+</body>
+</html>

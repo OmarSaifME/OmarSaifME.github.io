@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('stp.jpg');
+  background-image: url('bwv.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -327,19 +327,12 @@ nav a.active {
   background: #1E1E1E; /* Dark base */
   border: 1px solid #00CED1; /* Your glow color */
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: .8rem;
   box-shadow:
-    0 0 10px rgba(75, 184, 0, 0.3), /* Inner glow */
-    4px 4px 0 #00CED1; /* "Sticky note" offset */
+    0 0 10px #00CED1, /* Inner glow */
+    3px 3px 0 #00CED1; /* "Sticky note" offset */
   transition: all 0.3s ease;
-  max-width: 300px; /* Control card width */
-  margin-left: 400px;
-  margin-top: -600px;
-  grid-row: 2;
-  grid-column: 11 / 14;
-  height: auto !important; /* Prevent vertical stretch */
-  align-self: start;       /* Anchor to top of grid cell */
-  margin-bottom: 0px;     /* Add breathing room below */
+  min-width: 280px; /* Control card width */
 }
 
 /* First card */
@@ -354,27 +347,24 @@ nav a.active {
 
 /* Hover Glow (Reuse your existing hover styles) */
 .project-card:hover {
-  transform: translateY(-5px); /* Slight lift */
+  transform: translateY(-5px);
   box-shadow:
-    0 0 15px rgba(75, 184, 0, 0.6),
-    6px 6px 0 #00CED1; /* Bigger "peel" effect */
-    background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
+    0 0 15px #00CED1,
+    4px 4px 0 #00CED1;
+  background: #2A2A2A;
 }
 
 
-/* REUSE YOUR .grid-container with tweaks  */
+/* REUSE YOUR .grid-container with tweaks */
 .projects-grid {
-  display: grid;
-  grid-template-rows: auto;
-  grid-auto-rows: 0;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem; /* Space between cards */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 55vh; /* Take up most of screen height */
   padding: 2rem;
   width: 100%;
-  max-width: 1600px; /* Adjust based on your layout */
-  margin: 0 auto; /* Center the grid */
-  min-height: 0 !important; /* Grids often create extra height */
-  height: 0 !important;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Mobile: 1 card/row */

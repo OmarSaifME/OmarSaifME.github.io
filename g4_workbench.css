@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('hex.jpg');
+  background-image: url('bwv.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -184,7 +184,7 @@ nav a {
   color: #00CED1;
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 0; /* Better click area */
+  padding: 15px 15px; /* Better click area */
   transition: all 0.3s;
 }
 
@@ -345,6 +345,31 @@ nav a.active {
     background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
 }
 
+/* PROJECT CARDS - STICKY NOTE STYLE */
+.project-card2 {
+  display: block; /* Required for <a> tags */
+  text-decoration: none; /* Kill underline */
+  color: inherit; /* Inherit text color */
+  cursor: pointer; /* Finger pointer on hover */
+  background: #1E1E1E; /* Dark base */
+  border: 1px solid #7CFC00; /* Your glow color */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 10px rgba(75, 184, 0, 0.3), /* Inner glow */
+    4px 4px 0 #7CFC00; /* "Sticky note" offset */
+  transition: all 0.3s ease;
+  max-width: 300px; /* Control card width */
+}
+
+/* Hover Glow (Reuse your existing hover styles) */
+.project-card2:hover {
+  transform: translateY(-5px); /* Slight lift */
+  box-shadow:
+    0 0 15px rgba(75, 184, 0, 0.6),
+    6px 6px 0 #7CFC00; /* Bigger "peel" effect */
+    background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
+}
 
 /* REUSE YOUR .grid-container with tweaks */
 .projects-grid {

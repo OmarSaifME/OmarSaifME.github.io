@@ -14,20 +14,26 @@
 </head>
 <body>
 <header>
-        <h1 class="typewriter-container">Still in the Forge</h1>
+        <h1 class="typewriter-container">Caution: Keep Clear</h1>
         <p class="glitch-text">Stand By for Deployment</p>
     </header>
 
 <!-- PROJECTS SECTION -->
 <section class="projects-grid">
-  <a href="index.html" class="project-card"> <!-- Whole card is clickable! -->
+  <a href="#" class="project-card" onclick="goBack()"> <!-- Whole card is clickable! -->
     <h3>Apologies. Me and Jarvis (get it?) are still working on it.</h3>
-    <p><em>(click to go back home)</em></p>
+    <p><em>(click to go back)</em></p>
       <p2><em></em></p2>
     <!-- RIP "Read More" button -->
   </a>
-    
 </section>
+
+<script>
+function goBack() {
+  event.preventDefault(); // Stop default link behavior
+  window.history.back(); // Browser back button functionality
+}
+</script>
 
 </body>
 </html>

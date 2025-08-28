@@ -126,7 +126,7 @@ header {
     0 0 10px #FFD700, /* Inner glow */
     3px 3px 0 #FFD700; /* "Sticky note" offset */
   transition: all 0.3s ease;
-  max-width: 320px; /* Control card width */
+  max-width: 380px; /* Control card width */
 }
 
 /* Hover Glow (Reuse your existing hover styles) */

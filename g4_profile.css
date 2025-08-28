@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box; /* Good call keeping this */
-  /*outline: 1px solid red; /* Uncomment ONLY when debugging */
+  /*outline: 1px solid red; */ /* Uncomment ONLY when debugging */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   transition: color 0.4s;
 
   /* Responsive background */
-  background-image: url('unc.jpg');
+  background-image: url('bwv.jpg');
   background-size: cover; /* Fills screen without distortion */
   background-position: right;
   background-attachment: scroll; /* Optional: Parallax effect */
@@ -31,7 +31,7 @@ body {
 }
 
 header {
-            color: #1A1A1A;
+            color: #7CFC00;
             text-align: right;
             padding: clamp(1rem, 3vw, 2rem); /* Scales between 1rem-2rem */
         }
@@ -39,7 +39,7 @@ header {
         /* Cursor blink */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #1A1A1A; }
+  50% { border-color: #7CFC00; }
 }
 
 .home-button {
@@ -82,74 +82,6 @@ header {
   bottom: 4rem;
   left: 2rem;
   z-index: 9999;
-}
-
-/* BUTTON STYLES (unchanged) */
-.hover-button {
-  font-size: clamp(1.4rem, 2vw, 1.6rem);
-  background: transparent;
-  color: #00CED1;
-  border: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative; /* Added for z-index control */
-}
-
-/* Button hover effects */
-.hover-button:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 5px #7CFC00;
-  color: #7CFC00;
-}
-
-/* CONTAINER (FOR POSITIONING FLEXIBILITY) */
-.hover-button-container {
-  position: fixed; /* Changed from absolute to fixed */
-  bottom: 2rem; /* Relative unit - stays at bottom */
-  right: 2rem; /* Relative unit - stays at right */
-  z-index: 9999;
-  display: inline-block;
-}
-
-/* HOVER DESCRIPTION (HIDDEN BY DEFAULT) */
-.hover-description {
-  position: absolute; /* Changed from absolute */
-  left: 50%;
-  transform: translateX(30%);
-  bottom: calc(-100% + 20px); /* Positions above button */
-  width: min(280px, 90vw);
-  padding: 0.8rem;
-  background: #1E1E1E;
-  color: white;
-  border: 0px solid #00CED1;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #00CED1;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  pointer-events: none;
-  text-align: center;
-  z-index: 10000; /* Higher than button */
-}
-
-/* SHOW DESCRIPTION ON HOVER */
-.hover-button:hover + .hover-description {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Mobile adaptation */
-@media (max-width: 768px) {
-  .hover-button {
-    bottom: 1rem;
-    right: 1rem;
-  }
-  .hover-description {
-    width: 95vw; /* Full-width on mobile */
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 nav {
@@ -271,25 +203,47 @@ nav a.active {
 .grid-container {
     display: grid;
     /* Default grid for large screens */
-    grid-template-columns: repeat(25, 1fr);
+    grid-template-columns: repeat(30, 1fr);
     grid-auto-rows: min-content;
     gap: 20px;
     padding: 0;
-    margin-left: 60px;
-    margin-bottom: 10rem;
-    width: calc(100% - 70px);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    max-width: 1900px;
 }
 
+/*.about-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: -1;
+}*/
 .about-box {
     /* Default positioning (large screens) */
-    grid-column: 5 / 12;
-    grid-row: 5;
-    background-color: #1A1A1A;
+    position: relative;
+    grid-column: 19 / 27;
+    grid-row: 4;
+    background: rgba(26, 26, 26, 0.1); /* Semi-transparent dark */
+    backdrop-filter: blur(10px); /* The magic glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 0px solid rgba(0, 206, 209, 0.3); /* Subtle glass border */
+    background-color: #;
     padding: 10px 20px 15px 20px;
-    border-radius: 8px;
-    box-shadow: 1px 1px 10px #00CED1;
-    max-width: 800px;
+    border-radius: 10px;
+    box-shadow:
+        0px 0px 0px #00CED1,
+        0 0 30px rgba(0, 206, 209, 0.2) inset; /* Inner glow for depth */
+    max-width: 1400px;
     width: 100%;
+    text-align: justify;
 }
 
 /* Medium screens (e.g., tablets) */
@@ -327,29 +281,15 @@ nav a.active {
   background: #1E1E1E; /* Dark base */
   border: 1px solid #00CED1; /* Your glow color */
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: .8rem;
   box-shadow:
-    0 0 10px rgba(75, 184, 0, 0.3), /* Inner glow */
-    4px 4px 0 #00CED1; /* "Sticky note" offset */
+    0 0 15px rgba(75, 184, 0, 0.3), /* Inner glow */
+    2px 2px 0 #00CED1; /* "Sticky note" offset */
   transition: all 0.3s ease;
   max-width: 300px; /* Control card width */
-  margin-left: 400px;
-  margin-top: -600px;
-  grid-row: 2;
-  grid-column: 11 / 14;
-  height: auto !important; /* Prevent vertical stretch */
-  align-self: start;       /* Anchor to top of grid cell */
-  margin-bottom: 0px;     /* Add breathing room below */
-}
-
-/* First card */
-.project-card:first-child {
-  grid-row: 1; /* First card row */
-}
-
-/* Second card */
-.project-card:nth-child(2) {
-  grid-row: 8; /* Second card row */
+  text-align: center;
+  position: relative;
+  top: 0px;
 }
 
 /* Hover Glow (Reuse your existing hover styles) */
@@ -357,24 +297,64 @@ nav a.active {
   transform: translateY(-5px); /* Slight lift */
   box-shadow:
     0 0 15px rgba(75, 184, 0, 0.6),
-    6px 6px 0 #00CED1; /* Bigger "peel" effect */
+    4px 4px 0 #00CED1; /* Bigger "peel" effect */
     background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
 }
 
+/* PROJECT CARDS - STICKY NOTE STYLE */
+.project-card2 {
+  display: block; /* Required for <a> tags */
+  text-decoration: none; /* Kill underline */
+  color: inherit; /* Inherit text color */
+  cursor: pointer; /* Finger pointer on hover */
+  background: #1E1E1E; /* Dark base */
+  border: 1px solid #7CFC00; /* Your glow color */
+  border-radius: 8px;
+  padding: .8rem;
+  box-shadow:
+    0 0 15px rgba(75, 184, 0, 0.3), /* Inner glow */
+    2px 2px 0 #7CFC00; /* "Sticky note" offset */
+  transition: all 0.3s ease;
+  max-width: 300px; /* Control card width */
+  text-align: center;
+  position: relative;
+  top: 0px;
+}
 
-/* REUSE YOUR .grid-container with tweaks  */
+/* Hover Glow (Reuse your existing hover styles) */
+.project-card2:hover {
+  transform: translateY(-5px); /* Slight lift */
+  box-shadow:
+    0 0 15px rgba(75, 184, 0, 0.6),
+    4px 4px 0 #7CFC00; /* Bigger "peel" effect */
+    background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
+}
+
 .projects-grid {
   display: grid;
-  grid-template-rows: auto;
-  grid-auto-rows: 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem; /* Space between cards */
+  gap: 0.8rem;
   padding: 2rem;
   width: 100%;
-  max-width: 1600px; /* Adjust based on your layout */
-  margin: 0 auto; /* Center the grid */
-  min-height: 0 !important; /* Grids often create extra height */
-  height: 0 !important;
+  max-width: 600px;
+  justify-items: end; /* ← THIS IS THE KEY LINE! */
+  margin-top: 300px;
+}
+
+/* Create a right-side container */
+.right-sidebar {
+  position: fixed;
+  top: 230px;
+  gap: 2rem;
+  right: 0;
+  width: 50%; /* Half page width */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Push to bottom */
+  align-items: center; /* Center horizontally */
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 /* Mobile: 1 card/row */
@@ -382,3 +362,49 @@ nav a.active {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.image-showcase {
+  position: absolute;
+  top: 160px; /* ↓ Adjust based on header height */
+  left: 20rem;
+  width: 80%;
+  max-width: 700px;
+  height: auto; /* ↓ Account for header/footer */
+  min-height: 500px;
+  z-index: 5;
+  overflow: visible;
+}
+
+.image-stack {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  overflow: hidden; /* ← Double containment */
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.stack-item {
+  height: 700px; /* ← Fixed height for each image */
+  margin-bottom: 0;
+  flex: 1;
+  display: flex;           /* ← ADD */
+}
+
+.stack-item img {
+  width: auto;             /* ← CHANGE from 100% to auto */
+  height: auto;            /* ← CHANGE from 100% to auto */
+  max-width: 100%;         /* ← ADD: Prevent overflow */
+  max-height: 100%;        /* ← ADD: Prevent overflow */
+  object-fit: contain;     /* Keep this */
+  border: 1px solid #00CED1;
+  box-shadow:
+    0 0 20px rgba(0, 206, 209, 0.5),
+    0 0 40px rgba(0, 206, 209, 0.3) inset;
+  border-radius: 8px;
+  padding: 0px;
+  background: #1A1A1A;
+}
