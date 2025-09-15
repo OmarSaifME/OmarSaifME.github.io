@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box; /* Good call keeping this */
-  /*outline: 1px solid red; /* Uncomment ONLY when debugging */
+  /*outline: 1px solid red; */ /* Uncomment ONLY when debugging */
 }
 
 body {
@@ -80,13 +80,13 @@ header {
 .hover-container {
   position: fixed; /* Now matches button's fixed position */
   bottom: 4rem;
-  left: 2rem;
+  left: 1.7rem;
   z-index: 9999;
 }
 
 /* BUTTON STYLES (unchanged) */
 .hover-button {
-  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   background: transparent;
   color: #00CED1;
   border: 0;
@@ -94,6 +94,7 @@ header {
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative; /* Added for z-index control */
+  margin-left: 6px;
 }
 
 /* Button hover effects */
@@ -118,18 +119,18 @@ header {
   left: 50%;
   transform: translateX(30%);
   bottom: calc(-100% + 20px); /* Positions above button */
-  width: min(280px, 90vw);
+  width: min(370px, 90vw);
   padding: 0.8rem;
   background: #1E1E1E;
   color: white;
-  border: 0px solid #00CED1;
+  border: 0px solid #4BB800;
   border-radius: 8px;
   box-shadow: 0 0 5px #00CED1;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   pointer-events: none;
-  text-align: center;
+  text-align: left;
   z-index: 10000; /* Higher than button */
 }
 
@@ -275,21 +276,44 @@ nav a.active {
     grid-auto-rows: min-content;
     gap: 20px;
     padding: 0;
-    margin-left: 60px;
-    margin-bottom: 10rem;
-    width: calc(100% - 70px);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    width: 90%;
+    max-width: 1900px;
 }
 
+/*.about-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: -1;
+}*/
 .about-box {
     /* Default positioning (large screens) */
-    grid-column: 5 / 12;
-    grid-row: 5;
-    background-color: #1A1A1A;
+    position: relative;
+    grid-column: 6 / 20;
+    grid-row: 3;
+    background: rgba(26, 26, 26, 0.1); /* Semi-transparent dark */
+    backdrop-filter: blur(10px); /* The magic glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 0px solid rgba(0, 206, 209, 0.3); /* Subtle glass border */
+    background-color: #;
     padding: 10px 20px 15px 20px;
-    border-radius: 8px;
-    box-shadow: 1px 1px 10px #00CED1;
-    max-width: 800px;
+    border-radius: 10px;
+    box-shadow:
+        0px 0px 0px #00CED1,
+        0 0 30px rgba(0, 206, 209, 0.2) inset; /* Inner glow for depth */
+    max-width: 1400px;
     width: 100%;
+    text-align: justify;
 }
 
 /* Medium screens (e.g., tablets) */
@@ -327,44 +351,37 @@ nav a.active {
   background: #1E1E1E; /* Dark base */
   border: 1px solid #00CED1; /* Your glow color */
   border-radius: 8px;
-  padding: .8rem;
+  padding: 1.5rem;
   box-shadow:
-    0 0 10px #00CED1, /* Inner glow */
-    3px 3px 0 #00CED1; /* "Sticky note" offset */
+    0 0 15px rgba(75, 184, 0, 0.3), /* Inner glow */
+    2px 2px 0 #00CED1; /* "Sticky note" offset */
   transition: all 0.3s ease;
-  min-width: 280px; /* Control card width */
-}
-
-/* First card */
-.project-card:first-child {
-  grid-row: 1; /* First card row */
-}
-
-/* Second card */
-.project-card:nth-child(2) {
-  grid-row: 8; /* Second card row */
+  max-width: 270px; /* Control card width */
+  text-align: center;
+  position: relative;
+  top: 0px;
 }
 
 /* Hover Glow (Reuse your existing hover styles) */
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Slight lift */
   box-shadow:
-    0 0 15px #00CED1,
-    4px 4px 0 #00CED1;
-  background: #2A2A2A;
+    0 0 15px rgba(75, 184, 0, 0.6),
+    4px 4px 0 #00CED1; /* Bigger "peel" effect */
+    background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
 }
 
 
 /* REUSE YOUR .grid-container with tweaks */
 .projects-grid {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 55vh; /* Take up most of screen height */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.8rem; /* Space between cards */
   padding: 2rem;
   width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 1100px; /* Adjust based on your layout */
+  margin: 0 auto; /* Center the grid */
+  align-items: center;
 }
 
 /* Mobile: 1 card/row */
@@ -374,109 +391,193 @@ nav a.active {
   }
 }
 
-.blog-container {
-    max-width: 680px; /* Much narrower max-width for the centered effect */
-    width: 90%; /* Responsive on smaller screens */
-    margin: 6rem auto 4rem; /* Centered, with top margin for fixed nav */
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem; /* Creates consistent spacing BETWEEN cards */
-}
+/* -------------------------------------------------- */
+/* BLOG POST PAGE STYLES - The Centered Focus Tunnel */
+/* -------------------------------------------------- */
 
-/* 2. THE BLOG CARD - Themed preview element */
-.blog-card {
-    background: #1E1E1E; /* Your standard dark bg */
-    border: 1px solid #00CED1; /* Your signature border */
-    border-radius: 8px; /* Your rounded corners */
-    padding: 2rem;
-    box-shadow: 0 0 10px #00CED1, 4px 4px 0 #00CED1; /* Your awesome "sticky note" glow */
-    transition: all 0.3s ease; /* Your smooth transition */
-    text-decoration: none; /* Critical if whole card is a link */
-    display: block; /* Critical if whole card is a link */
-    color: inherit; /* Inherits white text color */
-}
-
-/* Hover effect for the card - Makes it pop */
-.blog-card:hover {
-    transform: translateY(-5px); /* Lifts the card up */
-    box-shadow: 0 0 15px #00CED1, 6px 6px 0 #00CED1; /* Even stronger glow */
-    background: #2A2A2A; /* Slightly lighter bg on hover */
-}
-
-/* 3. INSIDE THE CARD */
-.blog-card__title {
-    color: #00CED1; /* Your link color */
-    margin-top: 0;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 5px rgba(0, 206, 209, 0.5); /* Subtle text glow */
-    transition: all 0.3s ease;
-}
-
-.blog-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem; /* Space between individual pills */
-    margin-bottom: 1.25rem; /* Space between the tags and the excerpt */
-}
-
-.blog-card__tag {
-    /* Hybrid Style: Concept 2 + 3 */
-    background-color: #1A1A1A; /* Very dark cyan */
-    color: #00CED1; /* Vibrant green text */
-    border: 1px solid #00CED1; /* Cyan border */
-    box-shadow: inset 0 0 5px #00CED1; /* Inner glow - Concept 3 */
-
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px; /* Creates the pill shape */
-    font-size: 0.8rem;
-    font-family: Arial, sans-serif; /* Enhances the tech vibe */
-    text-decoration: none; /* Important if tags are <a> links */
-    cursor: pointer; /* Changes cursor to indicate clickability */
-    transition: all 0.3s ease; /* Matches your site's smooth transitions */
-}
-
-/* Hover effect for the interactive pill */
-.blog-card__tag:hover {
-    transform: scale(1.05); /* Slight "pop" effect */
-    box-shadow: inset 0 0 5px #00CED1, 0 0 2px #7CFC00; /* Keep inner glow, add outer green glow */
-}
-
-.blog-card:hover .blog-card__title {
-    color: #7CFC00; /* Changes to your green on hover */
-    text-shadow: 0 0 8px rgba(124, 252, 0, 0.7); /* Green glow on hover */
-}
-
-.blog-card__excerpt {
-    color: #ccc; /* A slightly off-white for less important text */
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.blog-card__read-more {
-    color: #7CFC00; /* Your green accent color */
+/* 1. THE BACK BUTTON */
+.back-button {
+    position: fixed;
+    top: 4rem;
+    right: 2rem;
+    color: #00CED1;
+    text-decoration: none;
     font-weight: bold;
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Allows for transform */
+    z-index: 1000; /* Ensure it's above other content */
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(124, 252, 0, 0.3);
 }
-
-.blog-card__read-more:hover {
-    transform: translateX(5px); /* Moves the text slightly right on hover */
+.back-button:hover {
+    color: #7CFC00;
     text-shadow: 0 0 8px rgba(124, 252, 0, 0.7);
 }
 
-/* -------------------------------------------------- */
-/* MOBILE RESPONSIVENESS for the Blog */
-/* -------------------------------------------------- */
-@media (max-width: 768px) {
-    .blog-container {
-        margin-top: 5rem;
-        gap: 2rem; /* Slightly less gap on mobile */
-    }
+/* 2. THE MAIN ARTICLE CONTAINER */
+.blog-post {
+    /* Creates the narrow, centered "focus tunnel" */
+    max-width: 820px; /* Even narrower for ideal reading */
+    width: 88%; /* Responsive on mobile */
+    margin: 4rem auto; /* Center it vertically & horizontally */
+    margin-top: 2rem;
+    padding: 2.5rem;
+    color: #fff; /* Ensures text is white */
+    text-shadow: 0 0 5px rgba(0, 255, 157, 0.3); /* Inherits your body's glow */
+    /* Frosted Glass Effect */
+    background: rgba(30, 30, 30, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* This creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
 
-    .blog-card {
+    border: 1px solid rgba(0, 206, 209, 0.3);
+    border-radius: 12px; /* Softer, larger rounded corners for the glass effect */
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.2), 4px 4px 10px rgba(0, 0, 0, 0.5); /* Softer, more ambient glow */
+}
+
+/* 3. THE POST HEADER - Centered Title & Metadata */
+.post-header {
+    text-align: center; /* Centers everything inside */
+    margin-bottom: 2rem; /* Space between header and content */
+    padding: 1.5rem 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(26, 26, 26, 0.95); /* Semi-transparent dark background for the bar */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #333;
+}
+
+.post-header h1 {
+    color: #00CED1;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+    margin-bottom: 0.5rem;
+    text-align: center; /* Explicitly center the title */
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+
+.post-meta {
+    text-align: center; /* Keeps the meta data centered under the title */
+}
+
+/* 4. THE CONTENT ITSELF - Centered and Readable */
+.post-content {
+    /* Text alignment and spacing */
+    text-align: left; /* The body text itself is left-aligned for readability */
+    line-height: 1.7; /* More space between lines for long-form text */
+    font-size: 1.1rem;
+}
+
+/* This is the key: the container is centered, text is left-aligned inside it. */
+
+/* 5. TAGS ON THE POST PAGE - Reuse your styles, but center the container */
+.post-tags {
+    display: flex;
+    justify-content: center; /* This centers the group of tags */
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.post-meta time {
+    color: #7CFC00; /* Your vibrant green accent color */
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 5px rgba(124, 252, 0, 0.4);
+    display: block; /* Puts it on its own line */
+    margin-bottom: 0.25rem; /* Space between date and tags */
+}
+
+/* 2. Style the Tags on the Post Page Specifically */
+.post-tags .blog-card__tag {
+    /* Override the card styles for a more muted, integrated look on the post page */
+    background-color: transparent;
+    color: #00CED1; /* Cyan text instead of green */
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px rgba(0, 206, 209, 0.7); /* Subtle glow */
+    text-decoration: none;
+}
+
+/* Optional: Hover effect for tags on post page */
+.post-tags .blog-card__tag:hover {
+    background-color: transparent; /* Add a dark fill on hover */
+    color: #7CFC00; /* Change text to green on hover */
+    text-shadow: 0 0 8px rgba(124, 252, 0, 0.9); /* Stronger green glow */
+    transform: scale(1.05); /* Keep the slight "pop" for interactivity */
+}
+
+
+* -------------------------------------------------- */
+/* GLOWING CYBER LIST STYLES */
+/* -------------------------------------------------- */
+
+/* Unordered Lists (Bullet Points) */
+.post-content ul {
+    list-style: none !important; /* Remove default bullets */
+    padding-left: 2rem; /* Indent the entire list */
+}
+
+.post-content ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    list-style-type: none !important; /* Double-tap: also remove from the <li> */
+}
+
+.post-content ul li::before {
+    content: "■"; /* Square bullet */
+    /* Alternative: content: "->"; for a command prompt vibe */
+    color: #7CFC00; /* Your green */
+    text-shadow: 0 0 3px #7CFC00; /* Glow effect */
+    font-size: 1.1em;
+    position: absolute;
+    left: -1.5rem; /* Position it in the left margin */
+    top: -0.35rem;
+}
+
+/* Ordered Lists (Numbered Lists) */
+.post-content ol {
+    list-style: none; /* Remove default numbers */
+    padding-left: 2.5rem; /* Need a bit more indent for the longer [1], [2] */
+    counter-reset: cyber-counter; /* Initialize a counter */
+}
+
+.post-content ol li {
+    counter-increment: cyber-counter;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.post-content ol li::before {
+    content: "[" counter(cyber-counter) "]"; /* Creates [1], [2], etc. */
+    color: #00CED1; /* Your cyan */
+    text-shadow: 0 0 5px #00CED1; /* Glow effect */
+    font-size: 0.9em;
+    font-family: 'Courier New', monospace; /* Monospace for the numbers */
+    position: absolute;
+    left: -2.5rem; /* Position it in the left margin */
+}
+
+
+/* 6. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .blog-post {
+        margin: 1.5rem auto; /* Less top margin on mobile */
         padding: 1.5rem;
+        width: 85%; /* Slightly more width on mobile */
+        border-radius: 8px;
+    }
+    .back-button {
+        top: 0.5rem;
+        left: 0.5rem;
+        z-index: 101;
+    }
+    .post-header {
+        padding: 1rem 0;
+    }
+    .post-header h1 {
+     font-size: 1.5rem; /* Smaller font on mobile */
     }
 }
