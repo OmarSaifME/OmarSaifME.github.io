@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFD Results: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Workbench: CFD Results</h1>
+        <p class="glitch-text">Result Discussion & CFD-Post</p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <p><strong>Result Discussion:</strong> Built as an extension of the CFD Manual for a 2D airfoil simulation, the CFD Results page aims to educate students and enthusiasts to dig deep into Computational Fluid Dynamics, and what different results represent in the context of their 2D CFD simulation.</p>
+        <p>The CFD simulation was done for a NACA0012 (Chord Length = 1m) airfoil, with a 2° Angle of Attack and a Flow Speed of 45 m/s (approximate).</p>
+        <em>Additional results will be shared here soon.</em>
+        </p>
+    </div>
+
+    <section class="projects-grid">
+        <a href="CFDResults/VelocityPressureContour.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Velocity and Pressure Contour Plots</h3>
+            <p>Contour Plot for velocity and pressure around the airfoil</p>
+            <p2><em>#ANSYS #Fluent #Contour</em></p2>
+        </a>
+
+        <a href="CFDResults/VelocityVectorPlot.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Velocity Vector Plot</h3>
+            <p>Plotted Velocity Vectors that elucidates the flow pattern and behavior of regional fluid domains around the airfoil</p>
+            <p2><em>#ANSYS #Fluent #Vectors</em></p2>
+        </a>
+
+        <a href="CFDResults/CpPlot.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Pressure Co-efficient (Cp) Plot</h3>
+            <p>Analysis of Pressure Co-efficent <em>(Cp)</em> distribution on NACA0012 at 2° Angle of Attack</p>
+            <p2><em>#ANSYS #Fluent #Cp</em></p2>
+        </a>
+
+        <a href="CFDResults/GettingStartedPostCFD.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Getting Started with CFD-Post</h3>
+            <p>A brief discussion on how to get started with CFD-Post for result discussion in ANSYS Fluent</p>
+            <p2><em>#ANSYS #Fluent #CFD-Post</em></p2>
+        </a>
+
+        <a href="CFDResults/WSSPlot.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Wall Shear Stress Plot</h3>
+            <p>Contour Plot for Wall Sheer Stress around the Airfoil (work is due)</p>
+            <p2><em>#ANSYS #Fluent #WSS</em></p2>
+        </a>
+
+        <a href="../workbench.html" class="project-card3"> <!-- Whole card is clickable! -->
+            <h3>Back to Workbench</h3>
+            <p></p>
+            <p><em>(Click to go back to 'Workbench' Page)</em></p>
+        </a>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../lab.html">Lab</a>
+        <a href="../../research.html">Research</a>
+        <a href="../../beyond.html">Beyond</a>
+        <a href="../../profile.html">Profile</a>
+        <a href="../../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

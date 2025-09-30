@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="g4_contact.css">
+    <link rel="stylesheet" href="g4.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact: Omar Saif</title>
@@ -18,28 +18,50 @@
         <p class="glitch-text">Looking forward to your mail</p>
     </header>
 
- <!-- PROJECTS SECTION -->
-<section class="projects-grid">
-  <a href="#" class="project-card" onclick="copyEmail()"> <!-- Whole card is clickable! -->
-    <h1> 📧 Email ︎📧 </h1>
-    <h3 id="email-text"><em>omarsaifabir@gmail.com</em></h3>
-      <p2><em>(click to copy address)</em></p2>
-    <!-- RIP "Read More" button -->
-  </a>
+<main class="grid-container">
+    <!-- EMAIL SECTION -->
+    <section class="projects-grid">
+        <a href="#" class="project-card3" onclick="copyEmail()">
+            <h2>📧 Email 📧</h2>
+            <h3 id="email-text"><em>omarsaifabir@gmail.com</em></h3>
+            <p><em>(click to copy address)</em></p>
+        </a>
+    </section>
+</main>
 
-</section>
-
-<a href="index.html" class="home-button"> 🏘️︎ </a>
-        
-
-    <nav>
-        <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
-        <a href="ideas.html">Ideas</a>
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lab.html">Lab</a>
+        <a href="research.html">Research</a>
+        <a href="beyond.html">Beyond</a>
         <a href="profile.html">Profile</a>
-        <a href="forge.html">Forge</a>
-        <a href="workbench.html">Workbench</a>
-    </nav>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
 
 <script>
 function copyEmail() {

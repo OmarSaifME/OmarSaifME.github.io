@@ -5,20 +5,20 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif; /* Fixed typo */
+  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   color: white;
-  text-shadow: 0 0 5px rgba(0, 255, 157, 0.3); /* Visible glow */
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.3);
   transition: color 0.4s;
 
-  /* Responsive background */
+  /* Tiling background that covers indefinitely */
   background-image: url('bwv.jpg');
-  background-size: cover; /* Fills screen without distortion */
-  background-position: right;
-  background-attachment: scroll; /* Optional: Parallax effect */
-  background-repeat: no-repeat;
+  background-size: auto; /* or contain - allows tiling */
+  background-repeat: repeat; /* This makes it tile infinitely */
+  background-position: right top;
+  background-attachment: fixed; /* Keeps background fixed while scrolling */
 }
 
 /* Mobile tweak (add at bottom of CSS) */
@@ -42,115 +42,6 @@ header {
   50% { border-color: #7CFC00; }
 }
 
-.home-button {
-  font-size: clamp(1.4rem, 2vw, 1.6rem); /* Scales between 1.4rem-1.6rem */
-  transform-origin: center;
-  transition: all 0.3s ease;
-  position: fixed;
-  top: 2rem; /* Relative units */
-  left: 2rem; /* Logical spacing */
-  padding: 0;
-  background: transparent;
-  color: #00CED1;
-  border: 0;
-  text-decoration: none;
-  z-index: 9999;
-  /* Safety net for small screens */
-  max-width: 90%;
-  white-space: nowrap;
-}
-
-.home-button:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 5px #7CFC00;
-  color: #7CFC00;
-  box-shadow: 0 0 15px #; /* Glow color fixed */
-}
-
-/* Mobile adaptation */
-@media (max-width: 768px) {
-  .home-button {
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.2rem; /* Larger tap target */
-  }
-}
-
-/* PARENT CONTAINER (FIXED POSITION) */
-.hover-container {
-  position: fixed; /* Now matches button's fixed position */
-  bottom: 4rem;
-  left: 2rem;
-  z-index: 9999;
-}
-
-/* BUTTON STYLES (unchanged) */
-.hover-button {
-  font-size: clamp(1.4rem, 2vw, 1.6rem);
-  background: transparent;
-  color: #00CED1;
-  border: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative; /* Added for z-index control */
-}
-
-/* Button hover effects */
-.hover-button:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 5px #7CFC00;
-  color: #7CFC00;
-}
-
-/* CONTAINER (FOR POSITIONING FLEXIBILITY) */
-.hover-button-container {
-  position: fixed; /* Changed from absolute to fixed */
-  bottom: 2rem; /* Relative unit - stays at bottom */
-  right: 2rem; /* Relative unit - stays at right */
-  z-index: 9999;
-  display: inline-block;
-}
-
-/* HOVER DESCRIPTION (HIDDEN BY DEFAULT) */
-.hover-description {
-  position: absolute; /* Changed from absolute */
-  left: 50%;
-  transform: translateX(30%);
-  bottom: calc(-100% + 20px); /* Positions above button */
-  width: min(280px, 90vw);
-  padding: 0.8rem;
-  background: #1E1E1E;
-  color: white;
-  border: 0px solid #00CED1;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #00CED1;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  pointer-events: none;
-  text-align: left;
-  z-index: 10000; /* Higher than button */
-}
-
-/* SHOW DESCRIPTION ON HOVER */
-.hover-button:hover + .hover-description {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Mobile adaptation */
-@media (max-width: 768px) {
-  .hover-button {
-    bottom: 1rem;
-    right: 1rem;
-  }
-  .hover-description {
-    width: 95vw; /* Full-width on mobile */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}  
 
 nav {
   position: fixed;
@@ -196,6 +87,174 @@ nav a:hover {
 nav a.active {
   color: #4BB800;
   border-left: 2px solid #4BB800;
+}
+
+/* Navigation Base Styles */
+nav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: auto;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 0.8rem;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 3px 0 10px #4BB800;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav:hover {
+  box-shadow: 3px 0 15px #4BB800;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+nav a {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #00CED1;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+nav a:hover {
+  color: #4BB800;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  animation: vibrate 0.37499s linear infinite;
+}
+
+nav a.active {
+  color: #4BB800;
+  border-left: 2px solid #4BB800;
+}
+
+/* Hamburger Button Styles */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #00CED1;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: #00CED1;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+/* Mobile Styles */
+@media (max-width: 1000px) {
+  nav {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    transform: none;
+    border-radius: 50%;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  nav.nav-open {
+    width: 200px;
+    height: auto;
+    min-height: 300px;
+    border-radius: 0 10px 10px 0;
+    padding: 1.5rem;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: static;
+    align-self: center;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  /* Hamburger animation when open */
+  nav.nav-open .hamburger {
+    background: transparent;
+  }
+
+  nav.nav-open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  nav.nav-open .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+
+  /* Adjust link styles for mobile */
+  nav a {
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Keep your existing vibrate animation */
+@keyframes vibrate {
+  0%, 50%, 100% { transform: rotate(180deg) translateX(0); }
+  25% { transform: rotate(180deg) translateX(-1px); }
+  75% { transform: rotate(180deg) translateX(1px); }
+}
+
+@media (max-width: 768px) {
+  nav a {
+    animation: none; /* Disable vibrate on mobile for better UX */
+  }
+
+  nav a:hover {
+    animation: none;
+  }
 }
 
 @keyframes vibrate {
@@ -270,56 +329,142 @@ nav a.active {
 /* Grid setup for main content */
 .grid-container {
     display: grid;
-    /* Default grid for large screens */
-    grid-template-columns: repeat(25, 1fr);
-    grid-auto-rows: min-content;
-    gap: 20px;
-    padding: 0;
-    margin-left: 60px;
-    margin-bottom: 10rem;
-    width: calc(100% - 70px);
+    grid-template-columns: repeat(16, 1fr); /* Increased to 16 columns for better control */
+    gap: 0px;
+    padding: 2rem;
+    margin-left: 120px; /* Account for nav width */
+    margin-bottom: 4rem;
+    width: calc(100% - 120px);
+    min-height: auto;
+    align-content: start;
 }
 
 .about-box {
-    /* Default positioning (large screens) */
-    grid-column: 5 / 12;
-    grid-row: 5;
+    /* Centered positioning - columns 5 to 12 (8 columns wide) */
+    grid-column: 5 / 11; /* This spans from column 5 to 12 (8 columns total) */
+    grid-row: 1;
     background-color: #1A1A1A;
-    padding: 10px 20px 15px 20px;
+    padding: 0.5rem 1.5rem;
     border-radius: 8px;
     box-shadow: 1px 1px 10px #00CED1;
-    max-width: 800px;
     width: 100%;
+    height: fit-content;
+    justify-self: center; /* Ensures content is centered within the grid area */
+    margin: 0;
 }
 
-/* Medium screens (e.g., tablets) */
+
+.projects-grid {
+    /* Position below the about box */
+    grid-column: 5 / 11; /* Wider span for projects */
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    margin-top: 2rem;
+    justify-content: center;
+    justify-items: center;
+}
+
+/* Medium screens adjustment */
 @media (max-width: 1200px) {
     .grid-container {
-        grid-template-columns: repeat(15, 1fr); /* Simpler grid */
-        margin-left: 80px; /* Reduce gap slightly */
-        width: calc(100% - 90px);
-        margin-bottom: 10rem;
+        grid-template-columns: repeat(12, 1fr);
+        margin-left: 100px;
+        width: calc(100% - 100px);
     }
+
     .about-box {
-        grid-column: 2 / 8; /* Adjusted span */
+        grid-column: 3 / 11; /* Adjust span for medium screens */
+    }
+
+    .projects-grid {
+        grid-column: 3 / 11; /* Adjust span for medium screens */
+        margin-top: 0.5rem;
     }
 }
 
-/* Small screens (e.g., large phones) */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(10, 1fr); /* Even simpler grid */
-        margin-left: 50px; /* Reduce gap slightly */
-        width: calc(100% - 70px);
-        margin-bottom: 10rem;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+        gap: 0px;
     }
-    .about-box {
-        grid-column: 2 / 11; /* Wider span */
+
+    .about-box, .projects-grid {
+        grid-column: 1; /* Full width on mobile */
+        grid-row: auto; /* Natural flow */
+    }
+
+    .projects-grid {
+        grid-template-columns: minmax(280px, 400px); /* CHANGE THIS - fixed width for centering */
+        justify-content: center; /* ENSURE THIS IS HERE */
+        margin-top: 1.5rem;
+    }
+
+    /* Adjust for mobile nav when open */
+    body.mobile-nav-open .grid-container {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+/* Profile Hero - Standalone circular element */
+.profile-hero {
+    grid-column: 5 / 11; /* Same positioning as about-box */
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    width: 100%;
+    justify-self: center;
+}
+
+.profile-hero-image {
+    width: 390px; /* Big and bold */
+    height: 390px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00CED1;
+    box-shadow: 0 0 10px #00CED1;
+}
+
+.profile-hero-content h1 {
+    color: #00CED1;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 0 15px rgba(0, 206, 209, 0.6);
+    font-size: 2.2rem;
+}
+
+.profile-hero-content p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .profile-hero {
+        grid-column: 1; /* Full width on mobile */
+    }
+
+    .profile-hero-image {
+        width: 250px;
+        height: 250px;
     }
 }
 
 /* PROJECT CARDS - STICKY NOTE STYLE */
-.project-card {
+.project-card2 {
   display: block; /* Required for <a> tags */
   text-decoration: none; /* Kill underline */
   color: inherit; /* Inherit text color */
@@ -333,27 +478,10 @@ nav a.active {
     4px 4px 0 #00CED1; /* "Sticky note" offset */
   transition: all 0.3s ease;
   max-width: 300px; /* Control card width */
-  margin-left: 400px;
-  margin-top: -600px;
-  grid-row: 2;
-  grid-column: 11 / 14;
-  height: auto !important; /* Prevent vertical stretch */
-  align-self: start;       /* Anchor to top of grid cell */
-  margin-bottom: 0px;     /* Add breathing room below */
-}
-
-/* First card */
-.project-card:first-child {
-  grid-row: 1; /* First card row */
-}
-
-/* Second card */
-.project-card:nth-child(2) {
-  grid-row: 8; /* Second card row */
 }
 
 /* Hover Glow (Reuse your existing hover styles) */
-.project-card:hover {
+.project-card2:hover {
   transform: translateY(-5px); /* Slight lift */
   box-shadow:
     0 0 15px rgba(75, 184, 0, 0.6),
@@ -361,24 +489,463 @@ nav a.active {
     background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
 }
 
-
-/* REUSE YOUR .grid-container with tweaks  */
-.projects-grid {
-  display: grid;
-  grid-template-rows: auto;
-  grid-auto-rows: 0;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem; /* Space between cards */
-  padding: 2rem;
-  width: 100%;
-  max-width: 1600px; /* Adjust based on your layout */
-  margin: 0 auto; /* Center the grid */
-  min-height: 0 !important; /* Grids often create extra height */
-  height: 0 !important;
+.project-card3 {
+  display: block; /* Required for <a> tags */
+  text-decoration: none; /* Kill underline */
+  color: inherit; /* Inherit text color */
+  cursor: pointer; /* Finger pointer on hover */
+  background: #1E1E1E; /* Dark base */
+  border: 1px solid #7CFC00; /* Your glow color */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 10px rgba(75, 184, 0, 0.3), /* Inner glow */
+    4px 4px 0 #7CFC00; /* "Sticky note" offset */
+  transition: all 0.3s ease;
+  max-width: 300px; /* Control card width */
+  text-align: center;
 }
 
-/* Mobile: 1 card/row */
+/* Hover Glow (Reuse your existing hover styles) */
+.project-card3:hover {
+  transform: translateY(-5px); /* Slight lift */
+  box-shadow:
+    0 0 15px rgba(75, 184, 0, 0.6),
+    6px 6px 0 #7CFC00; /* Bigger "peel" effect */
+    background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
+}
+
+/* Navigation card positioning */
+.navigation-card {
+    grid-column: 5 / 11;
+    grid-row: 3; /* Third row - after images! */
+    width: 100%;
+    justify-self: center;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+    .navigation-card {
+        grid-column: 1;
+        margin-top: 1.5rem;
+    }
+}
+
+.blog-container {
+    max-width: 680px; /* Much narrower max-width for the centered effect */
+    width: 90%; /* Responsive on smaller screens */
+    margin: 6rem auto 4rem; /* Centered, with top margin for fixed nav */
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Creates consistent spacing BETWEEN cards */
+}
+
+/* 2. THE BLOG CARD - Themed preview element */
+.blog-card {
+    background: #1E1E1E; /* Your standard dark bg */
+    border: 1px solid #00CED1; /* Your signature border */
+    border-radius: 8px; /* Your rounded corners */
+    padding: 2rem;
+    box-shadow: 0 0 10px #00CED1, 4px 4px 0 #00CED1; /* Your awesome "sticky note" glow */
+    transition: all 0.3s ease; /* Your smooth transition */
+    text-decoration: none; /* Critical if whole card is a link */
+    display: block; /* Critical if whole card is a link */
+    color: inherit; /* Inherits white text color */
+}
+
+/* Hover effect for the card - Makes it pop */
+.blog-card:hover {
+    transform: translateY(-5px); /* Lifts the card up */
+    box-shadow: 0 0 15px #00CED1, 6px 6px 0 #00CED1; /* Even stronger glow */
+    background: #2A2A2A; /* Slightly lighter bg on hover */
+}
+
+/* 3. INSIDE THE CARD */
+.blog-card__title {
+    color: #00CED1; /* Your link color */
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px rgba(0, 206, 209, 0.5); /* Subtle text glow */
+    transition: all 0.3s ease;
+}
+
+.blog-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Space between individual pills */
+    margin-bottom: 1.25rem; /* Space between the tags and the excerpt */
+}
+
+.blog-card__tag {
+    /* Hybrid Style: Concept 2 + 3 */
+    background-color: #1A1A1A; /* Very dark cyan */
+    color: #00CED1; /* Vibrant green text */
+    border: 1px solid #00CED1; /* Cyan border */
+    box-shadow: inset 0 0 5px #00CED1; /* Inner glow - Concept 3 */
+
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px; /* Creates the pill shape */
+    font-size: 0.8rem;
+    font-family: Arial, sans-serif; /* Enhances the tech vibe */
+    text-decoration: none; /* Important if tags are <a> links */
+    cursor: pointer; /* Changes cursor to indicate clickability */
+    transition: all 0.3s ease; /* Matches your site's smooth transitions */
+}
+
+/* Hover effect for the interactive pill */
+.blog-card__tag:hover {
+    transform: scale(1.05); /* Slight "pop" effect */
+    box-shadow: inset 0 0 5px #00CED1, 0 0 2px #7CFC00; /* Keep inner glow, add outer green glow */
+}
+
+.blog-card:hover .blog-card__title {
+    color: #7CFC00; /* Changes to your green on hover */
+    text-shadow: 0 0 8px rgba(124, 252, 0, 0.7); /* Green glow on hover */
+}
+
+.blog-card__excerpt {
+    color: #ccc; /* A slightly off-white for less important text */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-card__read-more {
+    color: #7CFC00; /* Your green accent color */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allows for transform */
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(124, 252, 0, 0.3);
+}
+
+.blog-card__read-more:hover {
+    transform: translateX(5px); /* Moves the text slightly right on hover */
+    text-shadow: 0 0 8px rgba(124, 252, 0, 0.7);
+}
+
+/* GALLERY-SPECIFIC CARD STYLES */
+.gallery-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background: #1E1E1E; /* Keep your dark base */
+  border: 1px solid #00CED1; /* Keep your teal border */
+  border-radius: 8px;
+  padding: 0; /* ← CHANGE: Remove padding for full-bleed images */
+  box-shadow:
+    0 0 15px rgba(75, 184, 0, 0.3),
+    2px 2px 0 #00CED1;
+  transition: all 0.3s ease;
+  max-width: 270px;
+  position: relative;
+  overflow: hidden; /* ← ADD: Contain the image */
+}
+
+/* Image styling */
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Crop image to fill container */
+  display: block;
+}
+
+/* Text container overlay */
+.card-text-content {
+  padding: 1rem; /* ← Add padding back for text only */
+  text-align: center;
+}
+
+/* Keep your awesome hover effects */
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 15px rgba(75, 184, 0, 0.6),
+    4px 4px 0 #00CED1;
+  background: rgba(75, 184, 0, 0.05);
+}
+
+/* Optional: Add overlay on image hover */
+.gallery-card:hover img {
+  opacity: 0.9;
+}
+
+/* Image Showcase Styles */
+.image-showcase {
+    grid-column: 5 / 11; /* Same positioning as your about-box */
+    grid-row: 1;
+    width: 100%;
+    justify-self: center;
+}
+
+.image-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+.stack-item {
+    width: 100%;
+    max-width: 800px; /* Control max image width */
+}
+
+.stack-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #00CED1;
+    border: 1px solid #00CED1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .image-showcase {
+        grid-column: 1; /* Full width on mobile */
+    }
+
+    .image-stack {
+        gap: 1.5rem;
+    }
+
+    .stack-item {
+        max-width: 100%; /* Full width images on mobile */
+    }
+}
+
+/* New dedicated class for description + image pages */
+.content-with-images {
+    grid-column: 5 / 11;
+    grid-row: 2; /* Safe position that won't conflict */
+    width: 100%;
+    justify-self: center;
+    margin-top: 2rem;
+}
+
+/* Reuse your existing image-stack styles */
+.content-with-images .image-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .content-with-images {
+        grid-column: 1;
+        margin-top: 1.5rem;
+    }
+}
+
+
+/* -------------------------------------------------- */
+/* BLOG POST PAGE STYLES - The Centered Focus Tunnel */
+/* -------------------------------------------------- */
+
+/* 1. THE BACK BUTTON */
+.back-button {
+    position: fixed;
+    top: 4rem;
+    right: 2rem;
+    color: #00CED1;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: all 0.3s ease;
+}
+.back-button:hover {
+    color: #7CFC00;
+    text-shadow: 0 0 8px rgba(124, 252, 0, 0.7);
+}
+
+/* 2. THE MAIN ARTICLE CONTAINER */
+.blog-post {
+    /* Creates the narrow, centered "focus tunnel" */
+    max-width: 820px; /* Even narrower for ideal reading */
+    width: 88%; /* Responsive on mobile */
+    margin: 4rem auto; /* Center it vertically & horizontally */
+    margin-top: 2rem;
+    padding: 2.5rem;
+    color: #fff; /* Ensures text is white */
+    text-shadow: 0 0 5px rgba(0, 255, 157, 0.3); /* Inherits your body's glow */
+    /* Frosted Glass Effect */
+    background: rgba(30, 30, 30, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* This creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+
+    border: 1px solid rgba(0, 206, 209, 0.3);
+    border-radius: 12px; /* Softer, larger rounded corners for the glass effect */
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.2), 4px 4px 10px rgba(0, 0, 0, 0.5); /* Softer, more ambient glow */
+}
+
+/* 3. THE POST HEADER - Centered Title & Metadata */
+.post-header {
+    text-align: center; /* Centers everything inside */
+    margin-bottom: 2rem; /* Space between header and content */
+    padding: 1.5rem 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(26, 26, 26, 0.95); /* Semi-transparent dark background for the bar */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #333;
+}
+
+.post-header h1 {
+    color: #00CED1;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+    margin-bottom: 0.5rem;
+    text-align: center; /* Explicitly center the title */
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+
+.post-meta {
+    text-align: center; /* Keeps the meta data centered under the title */
+}
+
+/* 4. THE CONTENT ITSELF - Centered and Readable */
+.post-content {
+    /* Text alignment and spacing */
+    text-align: left; /* The body text itself is left-aligned for readability */
+    line-height: 1.7; /* More space between lines for long-form text */
+    font-size: 1.1rem;
+}
+
+/* This is the key: the container is centered, text is left-aligned inside it. */
+
+/* 5. TAGS ON THE POST PAGE - Reuse your styles, but center the container */
+.post-tags {
+    display: flex;
+    justify-content: center; /* This centers the group of tags */
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.post-meta time {
+    color: #7CFC00; /* Your vibrant green accent color */
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 5px rgba(124, 252, 0, 0.4);
+    display: block; /* Puts it on its own line */
+    margin-bottom: 0.25rem; /* Space between date and tags */
+}
+
+/* 2. Style the Tags on the Post Page Specifically */
+.post-tags .blog-card__tag {
+    /* Override the card styles for a more muted, integrated look on the post page */
+    background-color: transparent;
+    color: #00CED1; /* Cyan text instead of green */
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px rgba(0, 206, 209, 0.7); /* Subtle glow */
+    text-decoration: none;
+}
+
+/* Optional: Hover effect for tags on post page */
+.post-tags .blog-card__tag:hover {
+    background-color: transparent; /* Add a dark fill on hover */
+    color: #7CFC00; /* Change text to green on hover */
+    text-shadow: 0 0 8px rgba(124, 252, 0, 0.9); /* Stronger green glow */
+    transform: scale(1.05); /* Keep the slight "pop" for interactivity */
+}
+
+
+* -------------------------------------------------- */
+/* GLOWING CYBER LIST STYLES */
+/* -------------------------------------------------- */
+
+/* Unordered Lists (Bullet Points) */
+.post-content ul {
+    list-style: none !important; /* Remove default bullets */
+    padding-left: 2rem; /* Indent the entire list */
+}
+
+.post-content ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    list-style-type: none !important; /* Double-tap: also remove from the <li> */
+}
+
+.post-content ul li::before {
+    content: "■"; /* Square bullet */
+    /* Alternative: content: "->"; for a command prompt vibe */
+    color: #7CFC00; /* Your green */
+    text-shadow: 0 0 3px #7CFC00; /* Glow effect */
+    font-size: 1.1em;
+    position: absolute;
+    left: -1.5rem; /* Position it in the left margin */
+    top: -0.35rem;
+}
+
+/* Ordered Lists (Numbered Lists) */
+.post-content ol {
+    list-style: none; /* Remove default numbers */
+    padding-left: 2.5rem; /* Need a bit more indent for the longer [1], [2] */
+    counter-reset: cyber-counter; /* Initialize a counter */
+}
+
+.post-content ol li {
+    counter-increment: cyber-counter;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.post-content ol li::before {
+    content: "[" counter(cyber-counter) "]"; /* Creates [1], [2], etc. */
+    color: #00CED1; /* Your cyan */
+    text-shadow: 0 0 5px #00CED1; /* Glow effect */
+    font-size: 0.9em;
+    font-family: 'Courier New', monospace; /* Monospace for the numbers */
+    position: absolute;
+    left: -2.5rem; /* Position it in the left margin */
+}
+
+
+/* 6. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .blog-post {
+        margin: 1.5rem auto; /* Less top margin on mobile */
+        padding: 1.5rem;
+        width: 85%; /* Slightly more width on mobile */
+        border-radius: 8px;
+    }
+    .back-button {
+        top: auto; /* Remove top positioning */
+        bottom: .9rem; /* Position from bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Perfect center alignment */
+        right: auto; /* Remove right positioning */
+
+        /* Style for floating button */
+        background: rgba(30, 30, 30, 0.95);
+        padding: 0.75rem 1rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        z-index: 1001; /* Higher z-index to ensure it floats above content */
+        box-shadow: 0 0 7px rgba(0, 206, 209, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        text-align: center;
+    }
+    .post-header {
+        padding: 1rem 0;
+    }
+    .post-header h1 {
+     font-size: 1.5rem; /* Smaller font on mobile */
+    }
+}

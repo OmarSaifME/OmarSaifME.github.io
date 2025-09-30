@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research: CFD Abstract</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container"></h1>
+        <h2 class="glitch-text"></h2>
+    </header>
+
+ <!-- "Back to Blog" Button -->
+    <a href="../research.html" class="back-button">← Back to Research & Ideas</a>
+
+    <!-- Main Article Container -->
+    <article class="blog-post">
+
+        <header class="post-header">
+            <h1>2D CFD Analysis of an Unusually Shaped Airfoil</h1>
+            <div class="post-meta">
+                <time datetime="2025-09-13">25 September 2025</time>
+
+            </div>
+        </header>
+
+        <div class="post-content">
+            <!-- Your full article content goes here -->
+            <p><strong>Abstract: </strong>Unusual airfoil shapes may offer tangible aerodynamic performance improvements for both manned and unmanned fixed wing aircrafts. Aerodynamic performance metrics like Coefficient of Drag (Cd) and Coefficient of Lift (Cl) signifies the fluid dynamic behavior of an airborne vehicle with real world implication such as fuel efficiency and short runway distances. This research investigates the aerodynamic performance of an unusual 2D airfoil shape compared to a traditional airfoil shape (NACA0012) at 120 m/s (Re = 8.2×10^6) for different angle of attacks. The unusual airfoil profile loosely represents a highly customized airfoil, with a potential to offer novel solutions of wing design to the aircraft industry. A param sweep of ANSYS Fluent CFD simulation protocol was used to measure the two shapes under the same aerodynamic conditions. The results of them were then compared (alongside available datasets of the NACA0012 airfoil) to elucidate different aerodynamic characteristics of the shapes, to necessitate such unusual shapes in industry standard wing designs for aircrafts with improved performances. The methodology of the simulation is a critical component for the study, and thus, discussed extensively – with complementary technical assets readily available for replicable studies.</p>
+ <p><strong>Keywords: </strong>Airfoil, CFD, Aircraft, NACA0012, Boundary Layer, Drag, Lift, Aerodynamics</p>
+        </div>
+
+        <footer class="post-footer">
+            <!-- Next/Previous links could go here -->
+        </footer>
+
+    </article>
+
+    <nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../research.html">Research</a>
+        <a href="../beyond.html">Beyond</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

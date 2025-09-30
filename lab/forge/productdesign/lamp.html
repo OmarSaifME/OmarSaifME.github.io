@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PD Wooden Lamp: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h2 class="typewriter-container">Product Design: Wooden Lamp</h2>
+        <p class="glitch-text"></p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <h3><b>Wooden Lamp: Photorealistic Rendering</b></h3>
+        <p>This concept was inspired by a Pinterest post. The goal was to design a desk lamp with wooden texture and some light elements (shown in the switch) in the SolidWorks environment.</p>
+        <p><b>Design Tool:</b> SolidWorks<br><b>Render Tool:</b> SolidWorks Visualize</p>
+
+    </div>
+
+    <section class="content-with-images">
+    <div class="image-stack">
+        <div class="stack-item">
+            <img src="4_1.jpg" alt="Wooden Lamp Front View">
+        </div>
+        <div class="stack-item">
+            <img src="4_2.jpg" alt="Wooden Lamp Side View">
+        </div>
+    </div>
+    </section>
+
+    <section class="navigation-card">
+        <a href="../productdesign.html" class="project-card3"> <!-- Whole card is clickable! -->
+        <h3>Back to Product Design Page</h3>
+        <p></p>
+        <p2></p2>
+    </a>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../lab.html">Lab</a>
+        <a href="../../../research.html">Research</a>
+        <a href="../../../beyond.html">Beyond</a>
+        <a href="../../../profile.html">Profile</a>
+        <a href="../../../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

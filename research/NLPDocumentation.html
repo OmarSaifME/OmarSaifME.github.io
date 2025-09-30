@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research: NLP Design Documentation</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container"></h1>
+        <h2 class="glitch-text"></h2>
+    </header>
+
+ <!-- "Back to Blog" Button -->
+    <a href="../research.html" class="back-button">← Back to Research & Ideas</a>
+
+    <!-- Main Article Container -->
+    <article class="blog-post">
+
+        <header class="post-header">
+            <h1>NLP Based Design Documentation Partner</h1>
+            <div class="post-meta">
+                <time datetime="2025-09-13">13 September 2025</time>
+
+            </div>
+        </header>
+
+        <div class="post-content">
+            <!-- Your full article content goes here -->
+            <p>The idea stemmed from the fact that, I am lazy. While designing 3D engineering models, it is a very good practice to log the thought process of the design and features used to entertain them. Why? Here are some reasons – </p>
+           <ul>
+            <li>A documentation helps you in the long run revising your own design thinking</li>
+               <li>Step by step approaches help you ‘debug’ your design if you run into trouble</li>
+                <li>A log helps other fellow designers to learn from you</li>
+                <li>In a professional setting, working with multi-dimensional teams for inter-disciplinary models, a documentation acts as a unique and powerful medium of communication among team members to streamline the design process</li>
+                <li>To-wit, non-design individuals (like the ones in production or quality control) can communicate with the design team much more fluently based on the logs</li>
+           </ul>
+               </p>
+            <p>There are many more benefits to it.</p>
+            <p>But as stated already, I am lazy. Who has the time to write paragraphs parallel to integrating perforations on the cheese grater you are designing that will revolutionize the processed cheese industry?</p>
+            <p>So, I have been thinking of developing a custom (well, we will all use some APIs developed by OpenAI, xAI or something like that underneath anyways) ‘AI’ assistant who will log your design journey through that state-of-the-art kitchenware. A notepad will be open beside your preferred design software (sorry, you still have to write some of it!), where you put your thoughts and features used (in short). These texts will be considered as ‘logits’ for the natural language processor running in the background.</p>
+            <p>That is a very fancy way of saying ‘a chat in GPT, Grok or Claude’ of course.</p>
+            <p><b>Bonus - </b>NLP works based on the dataset it is trained on of course. So, you can train your NLP Partner in specific dataset that will resemble the organizational interactions (not the corporate ones, rather than human to human interaction, say how you communicate with your ‘production bros’ during a tea party or something), resulting in an NLP that understands you and your team.</p>
+            <p>Or, if it is personal use, you can ‘pre-train’ your NLP (that has been trained on a large dataset) to mimic your preferred mode of conduct. Say, you like to be sarcastic, or a little edgy (no judgement here!) and the NLP will replicate that tone in your log.</p>
+            <p>Just to make the documentation not boring or filled with age-old corporate or bureaucratic jargons. The goal is to develop a partner, not an acquaintance, right?</p>
+            <p>(I can already see ‘AI-Powered Design Assistant’ in bold, vivid font in some SF startups pitch deck!)</p>
+            <p>But once I am done with mine, of course it will be open-sourced. Because I will be using my time as the ‘seed fund’ and my time has no value. Sounds like a humble brag but who knows, that might be a sad statement.</p>
+            <p>Plus, a thousand minds are better than one, right?</p>
+        </div>
+
+        <footer class="post-footer">
+            <!-- Next/Previous links could go here -->
+        </footer>
+
+    </article>
+
+    <nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../research.html">Research</a>
+        <a href="../beyond.html">Beyond</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

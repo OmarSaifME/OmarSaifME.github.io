@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Forge</h1>
+        <p class="glitch-text">Engineer's Sketchbook</p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <p>Welcome to the <b>Forge</b> - where raw ideas were hammered, bent and sharpened into designs over the years. A collection of experiments, sparks and solid builds that shaped my craft. Although showcasing every design I have made over the years is beyond the scope of the website (and a little pointless if you ask me!), I hope you will like the 'cherry-picked' ones shown below.</p>
+        <p>CAD (and 3D in general) is fascinating. And I hope you will have as much fun perusing through some of my work as I had designing them. I have segregated the designs in 3 parts, 'something for every audience' kind of a deal I suppose.</p>
+        <p>Consider this page as my personal 'Instagram' for design (if you must), except this page will still be online if an outage takes Meta's server for some reason.</p>
+    </div>
+
+    <section class="projects-grid">
+        <a href="forge/productdesign.html" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Product Design</h3>
+            <p></p>
+            <p2><em><br><br><br>Photorealistic Renders of Everyday and Inspired Products</em></p2>
+        </a>
+
+      <a href="forge/digitaltwin.html" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Industrial Digital Twins</h3>
+            <p></p>
+            <p2><em><br><br>3D CAD Models (1:1) of Industrial Machines</em></p2>
+      </a>
+
+      <a href="forge/cadlab.html" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>CAD Lab</h3>
+            <p></p>
+            <p2><em><br><br><br>Product Models Engineered in Popular CAD Software</em></p2>
+      </a>
+
+        <a href="../lab.html" class="project-card3"> <!-- Whole card is clickable! -->
+            <h3>Back to the Lab</h3>
+            <p></p>
+            <p><em>(click to go back to 'The Lab' Page)</em></p>
+        </a>
+</section>
+
+    <nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../research.html">Research</a>
+        <a href="../beyond.html">Beyond</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

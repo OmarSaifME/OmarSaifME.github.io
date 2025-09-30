@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Research & Ideas</h1>
+        <p class="glitch-text">Imagination > Knowledge</p>
+    </header>
+
+   <main class="blog-container"> <!-- The new narrow, centered container -->
+
+        <!-- Blog Post 1 Preview -->
+              <a href="research/CFDAbstract.html" class="blog-card"> <!-- Link to the full article -->
+            <h2 class="blog-card__title">2D CFD Analysis of an Unusually Shaped Airfoil</h2>
+           <p class="blog-card__excerpt">Abstract of a research I am currently looking into. The research aims to find comparative aerodynamic performances between an industry standard airfoil shape and an unusual airfoil shape.</p>
+        </a>
+
+       <a href="research/NLPDocumentation.html" class="blog-card"> <!-- Link to the full article -->
+            <h2 class="blog-card__title">NLP Based Design Documentation Partner</h2>
+           <p class="blog-card__excerpt">A 'Chat-Bot' Style Design Documentation Assistant that tracks changes and decisions made during a 3D mechanical design process.</p>
+        </a>
+
+       <a href="research/thesis.pdf" class="blog-card"> <!-- Link to the full article -->
+            <h2 class="blog-card__title">Undergraduate Thesis on Bird Wing Analysis</h2>
+           <p class="blog-card__excerpt">Conducted as a part of a thesis, this study entertains the idea of changing a common commercial aircraft wing shape with bird wings, specifically with wings of different 'voyager' class birds known for their superior hovering flight mechanism.</p>
+        </a>
+
+
+        <!-- Add more blog-card elements as needed -->
+
+    </main>
+
+    <nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lab.html">Lab</a>
+        <a href="research.html">Research</a>
+        <a href="beyond.html">Beyond</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+
+<script>
+function goBack() {
+  event.preventDefault(); // Stop default link behavior
+  window.history.back(); // Browser back button functionality
+}
+</script>
+
+</body>
+</html>

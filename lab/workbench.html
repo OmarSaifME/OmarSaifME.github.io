@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workbench: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Workbench</h1>
+        <p class="glitch-text">Project Showcase</p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <p><strong>Workbench:</strong> Part scrapyard, part shrine. This is where you may find some of my works and useful educational manuals, alongside some codes and real life projects. Tested, broken, and duct-taped (?) contents that are worth showing.</p>
+        <em>Like the rest of the website, this page will be constantly updated with new materials for you to peruse through. A few sections are still in progress, and I appreciate your patience as I build them out.</em>
+        </p>
+    </div>
+
+        <section class="projects-grid">
+        <a href="workbench/CFDManual.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>NACA0012 CFD Manual</h3>
+            <p>Detailed Instructions for a 2D Computational Fluid Dynamics Simulation <em>(Beginner Level)</em></p>
+            <p><em>#Research #CFD #Mathematics</em></p>
+        </a>
+
+        <a href="workbench/PythonAoA.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Python Script for AoA Calculations</h3>
+            <p>A Python script that gives users specific settings (to manupulate flow direction) as output</p>
+            <p><em>#Python #ANSYS #Trigonometry</em></p>
+        </a>
+
+        <a href="workbench/CFDResults.html" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>NACA0012 CFD Results</h3>
+            <p>Discussions on a set of results derived from the CFD simulation of NACA0012 airfoil</p>
+            <p2><em>#ANSYS #CFD #Airfoil</em></p2>
+        </a>
+
+        <a href="../uc.html" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Case Study of Point Cloud Modelling</h3>
+            <p>A project I was assigned to for reconstruction of a 25-year old bending die, that did not have any digital documentation</p>
+            <p2><em>#Fusion360 #Inventor #LiDAR</em></p2>
+        </a>
+
+        <a href="../uc.html" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Case Study of Solar Panel Assembly</h3>
+            <p>How rapid prototyping shapes a mechanical design - from designers desk to demonstration and deployment</p>
+            <p2><em>#SolidWorks #PLM #Geometry</em></p2>
+        </a>
+
+        <a href="../lab.html" class="project-card3"> <!-- Whole card is clickable! -->
+            <h3>Back to the Lab</h3>
+            <p></p>
+            <p><em>(click to go back to 'The Lab' Page)</em></p>
+        </a>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../research.html">Research</a>
+        <a href="../beyond.html">Beyond</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+</nav>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

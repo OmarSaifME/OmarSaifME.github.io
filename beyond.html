@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="typewriter-container">Beyond the Lab</h1>
+        <p class="glitch-text">It isn't run by a bot... or is it?</p>
+    </header>
+
+
+<main class="grid-container">
+    <div class="about-box">
+        <!-- Your about content remains the same -->
+        <p>When I am not in the lab, or working on some research project; you can find me yelling at Liverpool back line (among other things!). This is a page about those other things (and van Dijk & co.) - who am I as a human I suppose.</p>
+        <p><strong>Hobbies:</strong> Football, Formula 1, Books, Chess, Games, Photography</br>
+        <br><strong>Favorite Club:</strong> Liverpool
+        <br><strong>Favorite Player:</strong> Mo Salah
+        <br><strong>Favorite Driver:</strong> Max Verstappen
+        <br><strong>Favorite Genre of Books:</strong> Science Fiction, Fantasy Novel, Non-Fiction
+        <br><strong>Selected Favorite Books:</strong> The Hitchhiker's Guide to the Galaxy - Douglas Adams, Parallel Worlds - Michio Kaku, City of Brass - S. A. Chakraborty
+            <br><strong>Selected Favorite Games:</strong> Elden Ring, The Witcher III, Mass Effect 3, Freelancer
+        <p><em>Both the Photography and Blog pages are still under construction. Please check back soon for updates. Tentatively - October 10th, 2025.</em></p>
+    </div>
+    <section class="projects-grid">
+        <a href="uc.html" class="project-card2">
+            <h3>Photography</h3>
+            <p>One of my favorite hobbies. Most of my captures are about nature. Someday, I intend to do astro photography.</p>
+            <p><em></em></p>
+        </a>
+
+        <a href="uc.html" class="project-card2">
+            <h3>Blog</h3>
+            <p>I like to write about random stuff. Please take everything written in my blog as a grain of salt.</p>
+            <p><em></em></p>
+        </a>
+    </section>
+</main>
+    
+    <nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lab.html">Lab</a>
+        <a href="research.html">Research</a>
+        <a href="beyond.html">Beyond</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>

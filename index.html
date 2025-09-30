@@ -22,51 +22,66 @@
 
 <main class="grid-container">
     <div class="about-box">
+        <!-- Your about content remains the same -->
         <p>I specialize in mathematical modelling for systems and products, mechanical design and process optimization. My niche? Breaking systems to rebuild them better.</p>
-<b>Toolbox</b>
-        <br>&emsp;<strong>- Design:</strong> SolidWorks, AutoCAD, Inventor, Fusion 360
-    <br>&emsp;<strong>- Simulation:</strong> ANSYS (CFD, FEA)</li>
-    <br>&emsp;<strong>- Presentation:</strong> KeyShot, SW Visualize, PhotoView 360</li>
-    <br>&emsp;<strong>- Data & Computation:</strong> Python, C++, HTML, CSS, Excel</li>
-    <p><strong>Research Interests:</strong> Intelligent Mechanical Designs, Biomimicry & Bio-Inspired Design, Generative & Point-Cloud 3D Modelling, Complex Mechanical Systems, Precision Manufacturing, Fluid Mechanics, AI’s role in Mechanical Engineering</li>
-        <p><b>Mission:</b>
-Scientific progress isn’t only about innovation. It’s about integration and evolution. My mission is to connect technical rigor with real-world utility, advancing our understanding of nature through iterative design and discovery.
-<p>(Also, I learn fast. GPA not included for your mental safety!)</p>
-
-        </p>
+        <b>Toolbox</b>
+        <br>&emsp;<strong>- Design:</strong> SolidWorks, AutoCAD, Inventor
+        <br>&emsp;<strong>- Simulation:</strong> ANSYS (CFD, FEA)
+        <br>&emsp;<strong>- Presentation:</strong> KeyShot, SW Visualize
+        <br>&emsp;<strong>- Data & Computation:</strong> Python, C++, HTML5, CSS3, Excel
+        <p><strong>Research Interests:</strong> Intelligent Mechanical Designs, Fluid Mechanics, Biomimicry & Bio-Inspired Design, Generative & Point-Cloud 3D Modelling, Complex Mechanical Systems, Precision Manufacturing, AI's role in Mechanical Engineering</p>
+        <p><b>Mission:</b> Scientific progress isn't only about innovation. It's about integration and evolution. My mission is to connect technical rigor with real-world utility, advancing our understanding of nature through iterative design and discovery.</p>
+        <p>(Also, I learn fast. GPA not included for your mental safety!)
     </div>
-</main>
 
     <section class="projects-grid">
-  <a href="workbench.html" class="project-card"> <!-- Whole card is clickable! -->
-    <h3>Project Showcase</h3>
-    <p>Peak into the works I've been doing!</p>
-      <p><em>#Research #CFD #Mathematics</em></p>
-    <!-- RIP "Read More" button -->
-  </a>
+        <a href="lab.html" class="project-card2">
+            <h3>Project Showcase</h3>
+            <p>Some of the projects and designs I have done over the years.</p>
+            <p><em>#CFD #Design</em></p>
+        </a>
 
-          <a href="forge.html" class="project-card"> <!-- Whole card is clickable! -->
-    <h3>Engineer's Sketchbook</h3>
-    <p>Are you into Engineering Design?</p>
-      <p><em>#CAD #Design</em></p>
-    <!-- RIP "Read More" button -->
-  </a>
+        <a href="research.html" class="project-card2">
+            <h3>Current and Past Research</h3>
+            <p>Look into the research I have done and are currently engaged in.</p>
+            <p><em>#Research #CFD #NLP</em></p>
+        </a>
     </section>
-<a href="index.html" class="home-button"> 🏘️︎ </a>
-
-<!-- Wrap both button and description in a container -->
-<div class="hover-container">
-  <button class="hover-button"> 🌀 </button>
-  <div class="hover-description"><b>Did you know?</b><br>Turbulence in the ocean can create eddies the size of entire countries; swirling masses of water that can trap heat and nutrients for months!</div>
-</div>
+</main>
     
-    <nav>
-        <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
-        <a href="ideas.html">Ideas</a>
+    <nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="lab.html">Lab</a>
+        <a href="research.html">Research</a>
+        <a href="beyond.html">Beyond</a>
         <a href="profile.html">Profile</a>
-        <a href="forge.html">Forge</a>
-        <a href="workbench.html">Workbench</a>
-    </nav>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+
 </body>
 </html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Profile: Certifications</h1>
+        <p class="glitch-text">Collection of Selected Certifications</p>
+    </header>
+
+<main class="grid-container">
+    <section class="projects-grid">
+    <a href="certifications/cswa.html" class="project-card gallery-card">
+        <img src="certifications/cswa.jpg" alt="certificate">
+        <div class="card-text-content">
+            <h3>Certified SolidWorks Associate - Mechanical Design</h3>
+            <p><em>Issue Date - July, 2021</em></p>
+        </div>
+    </a>
+
+    <a href="certifications/itd.html" class="project-card gallery-card">
+        <img src="certifications/itd.jpg" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>Innovation Through Design - Think, Make, Break, Repeat</h3>
+            <p><em>Issue Date - January, 2021</em></p>
+        </div>
+    </a>
+
+    <a href="certifications/airfoilflow.html" class="project-card gallery-card">
+        <img src="certifications/airfoilflow.jpg" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>ANSYS - Flow over an Airfoil</h3>
+            <p><em>Issue Date - December, 2023</em></p>
+        </div>
+    </a>
+
+    <a href="certifications/python.html" class="project-card gallery-card">
+        <img src="certifications/python.jpg" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>Python for Beginners</h3>
+            <p><em>Issue Date - February, 2021</em></p>
+        </div>
+    </a>
+
+    <a href="certifications/msup.html" class="project-card gallery-card">
+        <img src="certifications/msup.jpg" alt="Precision render description">
+        <div class="card-text-content">
+        <h3>ANSYS - Mode Superposition Method</h3>
+        <p><em>Issue Date - August, 2023</em></p>
+    </div>
+    </a>
+
+    <a href="certifications/msta.html" class="project-card gallery-card">
+        <img src="certifications/msta.jpg" alt="Precision render description">
+        <div class="card-text-content">
+        <h3>ANSYS - Mode Superposition Transient Analysis</h3>
+        <p><em>Issue Date - August, 2023</em></p>
+    </div>
+    </a>
+        
+      <a href="../profile.html" class="project-card3"> <!-- Whole card is clickable! -->
+        <h3>Back to Profile</h3>
+        <p></p>
+        <p2><em><br>(Click to go back to Profile)</br></em></p2>
+      </a>
+</section>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../research.html">Research</a>
+        <a href="../beyond.html">Beyond</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+
+<script>
+function expandCard(card) {
+  // Create or activate backdrop
+  let backdrop = document.querySelector('.overlay-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'overlay-backdrop';
+    backdrop.onclick = () => closeAllCards();
+    document.body.appendChild(backdrop);
+  }
+
+  // Close any already open cards
+  closeAllCards();
+
+  // Open this card
+  const expandedContent = card.querySelector('.card-expanded');
+  expandedContent.classList.add('active');
+  backdrop.classList.add('active');
+
+  // Prevent body scrolling
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAllCards() {
+  document.querySelectorAll('.card-expanded.active').forEach(expanded => {
+    expanded.classList.remove('active');
+  });
+
+  const backdrop = document.querySelector('.overlay-backdrop');
+  if (backdrop) backdrop.classList.remove('active');
+
+  // Restore body scrolling
+  document.body.style.overflow = 'auto';
+}
+
+function closeCard(expandedContent) {
+  expandedContent.classList.remove('active');
+  const backdrop = document.querySelector('.overlay-backdrop');
+  if (backdrop) backdrop.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+</script>
+</body>
+</html>

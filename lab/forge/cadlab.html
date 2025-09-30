@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Lab: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Forge: CAD Lab</h1>
+        <p class="glitch-text">Designs! Designs Everywhere!</p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <p>Welcome to <b>CAD Lab</b> - a collection of my CAD designs I have made as a professional (and as a hobbyist) design engineer. This collection ranges from 'boring' industrial machineries to entertaining prototypes of drones. Apologies for not taking the time to render them properly, but they are all just one Keyshot project away from looking like advertisements.</p>
+        <p>The models are divided into two groups. In one, I showcase various industrial products I've designed as an engineer (industry context); while in the other, a few concept (and fun side projects - no one paid for any of those!) products.</p>
+        <p>Don't steal my designs!</p>
+    </div>
+
+    <section class="projects-grid">
+      <a href="cadlab/modelsandprototypes.html" class="project-card2"> <!-- Whole card is clickable! -->
+        <h3>Models and Prototypes</h3>
+        <p></p>
+        <p2><em><br><br>Collection of the 'Unpaid Designs' of Prototypes</em></p2>
+      </a>
+
+        <a href="../../uc.html" class="project-card2"> <!-- Whole card is clickable! -->
+        <h3>Industrial CAD Designs</h3>
+        <p></p>
+        <p2><em><br><br>Collection of Designs made as an Industrial Design Engineer</em></p2>
+        </a>
+
+      <a href="../forge.html" class="project-card3"> <!-- Whole card is clickable! -->
+        <h3>Back to Forge</h3>
+        <p></p>
+        <p2><em><br>(Click to go back to the 'Forge' Page)</br></em></p2>
+      </a>
+</section>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../lab.html">Lab</a>
+        <a href="../../research.html">Research</a>
+        <a href="../../beyond.html">Beyond</a>
+        <a href="../../profile.html">Profile</a>
+        <a href="../../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

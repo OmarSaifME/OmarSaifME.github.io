@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PD M82: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h2 class="typewriter-container">Product Design: Barrette M82</h2>
+        <p class="glitch-text"></p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <h3><b>Barrette M82 SR: Photorealistic Rendering</b></h3>
+        <p>After posting another design on facebook, one of my cousin dared me (for a coffee) to design a popular sniper rifle from the Call of Duty franchise. To his surprise, I designed and rendered this within a day and tagged him in the post. Awestrucked, he did buy me a coffee. Although I promised him I'd teach him how to design stuff in SolidWorks!</p>
+        <p><b>Design Tool:</b> SolidWorks<br><b>Render Tool:</b> SolidWorks PhotoView 360</p>
+    </div>
+
+    <section class="content-with-images">
+    <div class="image-stack">
+        <div class="stack-item">
+            <img src="5_1.JPG" alt="M82 View 1">
+        </div>
+        <div class="stack-item">
+            <img src="5_2.JPG" alt="M82 View 2">
+        </div>
+    </div>
+    </section>
+
+    <section class="navigation-card">
+        <a href="../productdesign.html" class="project-card3"> <!-- Whole card is clickable! -->
+        <h3>Back to Product Design Page</h3>
+        <p></p>
+        <p2></p2>
+    </a>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../../../index.html">Home</a>
+        <a href="../../../lab.html">Lab</a>
+        <a href="../../../research.html">Research</a>
+        <a href="../../../beyond.html">Beyond</a>
+        <a href="../../../profile.html">Profile</a>
+        <a href="../../../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

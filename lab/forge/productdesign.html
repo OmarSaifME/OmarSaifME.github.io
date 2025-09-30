@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Design: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Forge: Product Design</h1>
+        <p class="glitch-text">Photorealistic Renders</p>
+    </header>
+
+<main class="grid-container">
+    <section class="projects-grid">
+    <a href="productdesign/awm.html" class="project-card gallery-card">
+        <img src="productdesign/1_1.png" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>AWM Sniper Rifle</h3>
+            <p>SolidWorks, PhotoView 360</p>
+        </div>
+    </a>
+
+    <a href="productdesign/cmk.html" class="project-card gallery-card">
+        <img src="productdesign/2_1.jpg" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>Coffee Maker</h3>
+            <p>SolidWorks, Keyshot</p>
+        </div>
+    </a>
+
+    <a href="productdesign/ipx.html" class="project-card gallery-card">
+        <img src="productdesign/3_1.jpg" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>iPhone X</h3>
+            <p>SolidWorks, Keyshot</p>
+        </div>
+    </a>
+
+    <a href="productdesign/lamp.html" class="project-card gallery-card">
+        <img src="productdesign/4_1.jpg" alt="Precision render description">
+        <div class="card-text-content">
+            <h3>Wooden Lamp</h3>
+            <p>SolidWorks, SW Visualize</p>
+        </div>
+    </a>
+
+    <a href="productdesign/m82.html" class="project-card gallery-card">
+        <img src="productdesign/5_1.JPG" alt="Precision render description">
+        <div class="card-text-content">
+        <h3>Barrette M82 SR</h3>
+        <p>SolidWorks, PhotoView 360</p>
+    </div>
+    </a>
+
+    <a href="productdesign/p90.html" class="project-card gallery-card">
+        <img src="productdesign/6_1.JPG" alt="Precision render description">
+        <div class="card-text-content">
+        <h3>P90 PDW</h3>
+        <p>SolidWorks, PhotoView 360</p>
+    </div>
+    </a>
+    
+      <a href="../forge.html" class="project-card3"> <!-- Whole card is clickable! -->
+        <h3>Back to Forge</h3>
+        <p></p>
+        <p2><em><br>(Click to go back to Forge)</br></em></p2>
+      </a>
+</section>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../lab.html">Lab</a>
+        <a href="../../research.html">Research</a>
+        <a href="../../beyond.html">Beyond</a>
+        <a href="../../profile.html">Profile</a>
+        <a href="../../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+
+<script>
+function expandCard(card) {
+  // Create or activate backdrop
+  let backdrop = document.querySelector('.overlay-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'overlay-backdrop';
+    backdrop.onclick = () => closeAllCards();
+    document.body.appendChild(backdrop);
+  }
+
+  // Close any already open cards
+  closeAllCards();
+
+  // Open this card
+  const expandedContent = card.querySelector('.card-expanded');
+  expandedContent.classList.add('active');
+  backdrop.classList.add('active');
+
+  // Prevent body scrolling
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAllCards() {
+  document.querySelectorAll('.card-expanded.active').forEach(expanded => {
+    expanded.classList.remove('active');
+  });
+
+  const backdrop = document.querySelector('.overlay-backdrop');
+  if (backdrop) backdrop.classList.remove('active');
+
+  // Restore body scrolling
+  document.body.style.overflow = 'auto';
+}
+
+function closeCard(expandedContent) {
+  expandedContent.classList.remove('active');
+  const backdrop = document.querySelector('.overlay-backdrop');
+  if (backdrop) backdrop.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+</script>
+</body>
+</html>
