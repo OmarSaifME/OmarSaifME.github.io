@@ -21,15 +21,6 @@ body {
   background-attachment: fixed; /* Keeps background fixed while scrolling */
 }
 
-/* Mobile tweak (add at bottom of CSS) */
-@media (max-width: 768px) {
-  body {
-    background-size: contain; /* Prevents pixelation */
-    background-position: top right; /* Adjust as needed */
-    background-attachment: scroll;
-  }
-}
-
 header {
             color: #7CFC00;
             text-align: right;
@@ -180,66 +171,6 @@ nav a.active {
 .hamburger::before { top: -8px; }
 .hamburger::after { bottom: -8px; }
 
-/* Mobile Styles */
-@media (max-width: 1000px) {
-  nav {
-    width: 60px;
-    height: 60px;
-    top: 20px;
-    left: 20px;
-    transform: none;
-    border-radius: 50%;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  nav.nav-open {
-    width: 200px;
-    height: auto;
-    min-height: 300px;
-    border-radius: 0 10px 10px 0;
-    padding: 1.5rem;
-  }
-
-  .nav-toggle {
-    display: block;
-    position: static;
-    align-self: center;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  nav.nav-open .nav-links {
-    display: flex;
-  }
-
-  /* Hamburger animation when open */
-  nav.nav-open .hamburger {
-    background: transparent;
-  }
-
-  nav.nav-open .hamburger::before {
-    transform: rotate(45deg);
-    top: 0;
-  }
-
-  nav.nav-open .hamburger::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-  }
-
-  /* Adjust link styles for mobile */
-  nav a {
-    writing-mode: horizontal-tb;
-    transform: none;
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-}
-
 /* Keep your existing vibrate animation */
 @keyframes vibrate {
   0%, 50%, 100% { transform: rotate(180deg) translateX(0); }
@@ -326,7 +257,7 @@ nav a.active {
 }
 
 
-/* Grid setup for main content */
+/* Grid setup for default resolution */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr); /* Increased to 16 columns for better control */
@@ -369,52 +300,6 @@ nav a.active {
     justify-items: center;
 }
 
-/* Medium screens adjustment */
-@media (max-width: 1200px) {
-    .grid-container {
-        grid-template-columns: repeat(12, 1fr);
-        margin-left: 100px;
-        width: calc(100% - 100px);
-    }
-
-    .about-box {
-        grid-column: 3 / 11; /* Adjust span for medium screens */
-    }
-
-    .projects-grid {
-        grid-column: 3 / 11; /* Adjust span for medium screens */
-        margin-top: 0.5rem;
-    }
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        margin-left: 0;
-        width: 100%;
-        padding: 1rem;
-        gap: 0px;
-    }
-
-    .about-box, .projects-grid {
-        grid-column: 1; /* Full width on mobile */
-        grid-row: auto; /* Natural flow */
-    }
-
-    .projects-grid {
-        grid-template-columns: minmax(280px, 400px); /* CHANGE THIS - fixed width for centering */
-        justify-content: center; /* ENSURE THIS IS HERE */
-        margin-top: 1.5rem;
-    }
-
-    /* Adjust for mobile nav when open */
-    body.mobile-nav-open .grid-container {
-        margin-left: 200px;
-        width: calc(100% - 200px);
-    }
-}
-
 /* Profile Hero - Standalone circular element */
 .profile-hero {
     grid-column: 5 / 11; /* Same positioning as about-box */
@@ -449,18 +334,6 @@ nav a.active {
     line-height: 1.6;
     font-size: 1.1rem;
     color: #fff;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .profile-hero {
-        grid-column: 1; /* Full width on mobile */
-    }
-
-    .profile-hero-image {
-        width: 250px;
-        height: 250px;
-    }
 }
 
 /* PROJECT CARDS - STICKY NOTE STYLE */
@@ -524,14 +397,6 @@ nav a.active {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .navigation-card {
-        grid-column: 1;
-        margin-top: 1.5rem;
-    }
 }
 
 .blog-container {
@@ -704,21 +569,6 @@ nav a.active {
     border: 1px solid #00CED1;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .image-showcase {
-        grid-column: 1; /* Full width on mobile */
-    }
-
-    .image-stack {
-        gap: 1.5rem;
-    }
-
-    .stack-item {
-        max-width: 100%; /* Full width images on mobile */
-    }
-}
-
 /* New dedicated class for description + image pages */
 .content-with-images {
     grid-column: 5 / 11;
@@ -736,15 +586,6 @@ nav a.active {
     align-items: center;
     width: 100%;
 }
-
-/* Mobile */
-@media (max-width: 768px) {
-    .content-with-images {
-        grid-column: 1;
-        margin-top: 1.5rem;
-    }
-}
-
 
 /* -------------------------------------------------- */
 /* BLOG POST PAGE STYLES - The Centered Focus Tunnel */
@@ -915,9 +756,200 @@ nav a.active {
     left: -2.5rem; /* Position it in the left margin */
 }
 
+/* Quote Section */
+.quote-section {
+    grid-column: 5 / 11;
+    grid-row: 3;
+    width: 100%;
+    justify-self: center;
+    margin-top: 3rem;
+}
 
-/* 6. MOBILE RESPONSIVENESS */
+.quote-box {
+    background: rgba(30, 30, 30, 0.4); /* More apparent glass */
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 0px solid rgba(124, 252, 0, 0.4); /* Neon green border */
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow:
+        0 8px 11px rgba(124, 252, 0, 0), /* Green glow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.quote-box:hover {
+    /* Remove hover glow since it's not clickable */
+    border-color: rgba(124, 252, 0, 0.6); /* Slightly brighter green */
+    transform: translateY(-2px); /* Subtle lift instead of glow */
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.quote-author {
+    color: #7CFC00;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 0 0 1px rgba(124, 252, 0, 0.5);
+}
+
+/* Media Query screens adjustment */
+
+@media (max-width: 1400px) {
+  .grid-container {
+    grid-template-columns: repeat(14, 1fr);
+    margin-left: 120px;
+    width: calc(100% - 120px);
+  }
+  .about-box, .projects-grid, .quote-section, .profile-hero {
+    grid-column: 4 / 10;
+  }
+}
+
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(12, 1fr);
+        margin-left: 100px;
+        width: calc(100% - 100px);
+    }
+
+    .about-box, .projects-grid, .quote-section, .profile-hero {
+        grid-column: 3 / 9; /* Adjust span for medium screens */
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 1000px) {
+  nav {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 20px;
+    transform: none;
+    border-radius: 50%;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  nav.nav-open {
+    width: 200px;
+    height: auto;
+    min-height: 300px;
+    border-radius: 0 10px 10px 0;
+    padding: 1.5rem;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: static;
+    align-self: center;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  /* Hamburger animation when open */
+  nav.nav-open .hamburger {
+    background: transparent;
+  }
+
+  nav.nav-open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  nav.nav-open .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+
+  /* Adjust link styles for mobile */
+  nav a {
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile responsiveness for entire page*/
 @media (max-width: 768px) {
+    body {
+    background-size: contain; /* Prevents pixelation */
+    background-position: top right; /* Adjust as needed */
+    background-attachment: scroll;
+  }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+        gap: 0px;
+    }
+
+    .about-box, .projects-grid {
+        grid-column: 1; /* Full width on mobile */
+        grid-row: auto; /* Natural flow */
+    }
+
+    .projects-grid {
+        grid-template-columns: minmax(280px, 400px); /* CHANGE THIS - fixed width for centering */
+        justify-content: center; /* ENSURE THIS IS HERE */
+        margin-top: 1.5rem;
+    }
+
+    /* Adjust for mobile nav when open */
+    body.mobile-nav-open .grid-container {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .profile-hero {
+        grid-column: 1; /* Full width on mobile */
+    }
+
+    .profile-hero-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .navigation-card {
+        grid-column: 1;
+        margin-top: 1.5rem;
+    }
+
+    .image-showcase {
+        grid-column: 1; /* Full width on mobile */
+    }
+
+    .image-stack {
+        gap: 1.5rem;
+    }
+
+    .stack-item {
+        max-width: 100%; /* Full width images on mobile */
+    }
+
+    .content-with-images {
+        grid-column: 1;
+        margin-top: 1.5rem;
+    }
+
     .blog-post {
         margin: 1.5rem auto; /* Less top margin on mobile */
         padding: 1.5rem;
@@ -948,4 +980,19 @@ nav a.active {
     .post-header h1 {
      font-size: 1.5rem; /* Smaller font on mobile */
     }
+
+    .quote-section {
+        grid-column: 1;
+        margin-top: 2rem;
+        padding: 0 1rem;
+    }
+
+    .quote-box {
+        padding: 1.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.1rem;
+    }
 }
+
