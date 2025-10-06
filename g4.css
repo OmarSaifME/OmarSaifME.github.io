@@ -178,15 +178,6 @@ nav a.active {
   75% { transform: rotate(180deg) translateX(1px); }
 }
 
-@media (max-width: 768px) {
-  nav a {
-    animation: none; /* Disable vibrate on mobile for better UX */
-  }
-
-  nav a:hover {
-    animation: none;
-  }
-}
 
 @keyframes vibrate {
   0%, 100% { transform: rotate(180deg) translateX(0); }
@@ -593,8 +584,8 @@ nav a.active {
 
 /* 1. THE BACK BUTTON */
 .back-button {
-    position: fixed;
-    top: 4rem;
+    position: absolute;
+    top: 7rem;
     right: 2rem;
     color: #00CED1;
     text-decoration: none;
@@ -809,7 +800,7 @@ nav a.active {
     margin-left: 120px;
     width: calc(100% - 120px);
   }
-  .about-box, .projects-grid, .quote-section, .profile-hero {
+  .about-box, .projects-grid, .quote-section, .profile-hero, .content-with-images, .navigation-card, .image-showcase {
     grid-column: 4 / 10;
   }
 }
@@ -821,13 +812,101 @@ nav a.active {
         width: calc(100% - 100px);
     }
 
-    .about-box, .projects-grid, .quote-section, .profile-hero {
+    .about-box, .projects-grid, .quote-section, .profile-hero, .content-with-images, .navigation-card, .image-showcase {
         grid-column: 3 / 9; /* Adjust span for medium screens */
     }
 }
 
 /* Mobile Styles */
 @media (max-width: 1000px) {
+  /* HEADER SHRINK & STICK */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0;
+    height: 60px; /* Compact height */
+    background: rgba(18, 18, 18, 0.95); /* Your nav background */
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid #00CED1;
+  }
+
+  .typewriter-container {
+    font-size: 1.1rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    width: fit-content;
+    max-width: calc(100% - 20px);
+  }
+
+  .glitch-text {
+    display: none; /* Hide subtitle to save space */
+  }
+
+  /* Add space to prevent content from hiding under fixed header */
+  .grid-container {
+    margin-top: 80px; /* Push content below fixed header */
+  }
+
+  .post-header {
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+    margin-top: 0;
+    padding: 1rem 0;
+    display: block !important;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #333;
+    margin-bottom: 1rem;
+    height: auto;
+    min-height: fit-content;
+    overflow: visible;
+  }
+
+  .post-header h1 {
+    display: block !important; /* Force vertical stacking */
+    width: 100% !important;
+  }
+
+  .post-meta {
+    margin-top: .5rem; /* Add space between them */
+  }
+
+  /* Ensure blog content starts below both headers */
+  .blog-post {
+    margin-top: 1rem; /* Let sticky positioning handle spacing */
+  }
+  
+  .back-button {
+        position: fixed;
+        top: auto; /* Remove top positioning */
+        bottom: 3.2rem; /* Position from bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Perfect center alignment */
+        right: auto; /* Remove right positioning */
+
+        /* Style for floating button */
+        background: rgba(30, 30, 30, 0.95);
+        padding: 0.75rem 1rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        z-index: 1001; /* Higher z-index to ensure it floats above content */
+        box-shadow: 0 0 7px rgba(0, 206, 209, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        text-align: center;
+    }
+  
   nav {
     width: 60px;
     height: 60px;
@@ -883,6 +962,11 @@ nav a.active {
     transform: none;
     padding: 10px;
     font-size: 0.9rem;
+    animation: none; /* Disable vibrate on mobile for better UX */
+  }
+
+  nav a:hover {
+    animation: none;
   }
 }
 
@@ -956,30 +1040,6 @@ nav a.active {
         width: 85%; /* Slightly more width on mobile */
         border-radius: 8px;
     }
-    .back-button {
-        top: auto; /* Remove top positioning */
-        bottom: .9rem; /* Position from bottom */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Perfect center alignment */
-        right: auto; /* Remove right positioning */
-
-        /* Style for floating button */
-        background: rgba(30, 30, 30, 0.95);
-        padding: 0.75rem 1rem;
-        border-radius: 30px;
-        font-size: 0.8rem;
-        z-index: 1001; /* Higher z-index to ensure it floats above content */
-        box-shadow: 0 0 7px rgba(0, 206, 209, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        text-align: center;
-    }
-    .post-header {
-        padding: 1rem 0;
-    }
-    .post-header h1 {
-     font-size: 1.5rem; /* Smaller font on mobile */
-    }
 
     .quote-section {
         grid-column: 1;
@@ -996,3 +1056,16 @@ nav a.active {
     }
 }
 
+.site-footer {
+    text-align: center;
+    padding: 0.8rem;
+    color: #00CED1;
+    font-size: 0.9rem;
+    border-top: 0px solid rgba(0, 206, 209, 0.3);
+    margin-top: auto;
+    background: /*rgba(18, 18, 18, 0.8);*/
+    backdrop-filter: blur(10px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
