@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../g4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFD Automation: Omar Saif</title>
+    <style>
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <h1 class="typewriter-container">Workbench: CFD Automation</h1>
+        <p class="glitch-text">An Automated CFD Protocol Using .jou Script</p>
+    </header>
+
+<main class="grid-container">
+    <div class="about-box">
+        <p><strong>CFD Automation:</strong> This is an automated protocol for simulation and post-processing of a single run (specific AoA) CFD study for a 2D airfoil (or any other 2D object). These scripts are designed for the Spalart Allmaras governing equation, but future updates will add other governing equations and associated settings for turbulence modeling and flow seperation. Python and the built in 'Journal' feature (.jou) of ANSYS were used to automate the workflow.</p>
+        <p>The CFD simulation was done for a NACA0012 (Chord Length = 1m) airfoil. Please consult the documentation (instruction manual) and the Git repository for the journal and Python scripts.</p>
+        <em>Additional scripts for turbulence modeling for post-stall conditions will be shared here soon.</em>
+        </p>
+    </div>
+
+    <section class="projects-grid">
+        <a href="CFDAutomation/CFDAutomationWorkflow.pdf" class="project-card2"> <!-- Whole card is clickable! -->
+            <h3>Instruction Manual</h3>
+            <p>Portable Document Format File for the instructions on how to use the scripts to conduct the automated CFD simulation</p>
+            <p2><em>#ANSYS #Fluent</em></p2>
+        </a>
+
+        <a href="https://github.com/OmarSaifME/CFD-Automation.git" class="project-card2" target="_blank" rel="noopener noreferrer"> <!-- Whole card is clickable! -->
+            <h3>GitHub Repository</h3>
+            <p>GitHub Repository hosting the automation scripts, with detailed descriptions</p>
+            <p2><em>#ANSYS #Journal #Python</em></p2>
+        </a>
+
+        <a href="../workbench.html" class="project-card3"> <!-- Whole card is clickable! -->
+            <h3>Back to Workbench</h3>
+            <p></p>
+            <p><em>(Click to go back to 'Workbench' Page)</em></p>
+        </a>
+    </section>
+</main>
+
+<nav id="mainNav">
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../lab.html">Lab</a>
+        <a href="../../research.html">Research</a>
+        <a href="../../beyond.html">Beyond</a>
+        <a href="../../profile.html">Profile</a>
+        <a href="../../contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('mainNav');
+
+    navToggle.addEventListener('click', function() {
+        nav.classList.toggle('nav-open');
+    });
+
+    // Close nav when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768) {
+            if (!nav.contains(event.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+            }
+        }
+    });
+});
+</script>
+
+<footer class="site-footer">
+    <p>© 2025 Omar Saif · All Rights Reserved | Powered by Caffeine ☕</p>
+</footer>
+
+</body>
+</html>
