@@ -3,8 +3,20 @@
   /*outline: 1px solid red; /* Uncomment ONLY when debugging */
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay - adjust 0.3 for darkness */
+  z-index: -1;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -14,15 +26,17 @@ body {
   transition: color 0.4s;
 
   /* Tiling background that covers indefinitely */
-  background-image: url('bwv.jpg');
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url('mwg.webp');
   background-size: auto; /* or contain - allows tiling */
   background-repeat: repeat; /* This makes it tile infinitely */
-  background-position: right top;
-  background-attachment: fixed; /* Keeps background fixed while scrolling */
+  background-position: calc(120vw - 00px) top;
+  background-attachment: fixed;
 }
 
 header {
-            color: #7CFC00;
+            color: #FDB813;
             text-align: right;
             padding: clamp(1rem, 3vw, 2rem); /* Scales between 1rem-2rem */
         }
@@ -30,82 +44,35 @@ header {
         /* Cursor blink */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #7CFC00; }
+  50% { border-color: #FDB813; }
 }
 
+
+/* === STREAMLINED NAV === */
 
 nav {
   position: fixed;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100px; /* Default width */
-  height: 100vh; /* Full viewport height (better than fixed pixels) */
-  background: #121212;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Center items horizontally */
-  padding: 1.5rem;
-  gap: 0.8rem;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 3px 0 10px #4BB800;
-  z-index: 1000;
-  transition: width 0.3s, box-shadow 0.3s; /* Smooth transitions */
-}
-
-nav:hover {
-  /*width: 120px; /* Expand on hover (optional) */
-  box-shadow: 3px 0 15px #; /* Enhanced glow */
-}
-
-nav a {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: #00CED1;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 15px 15px; /* Better click area */
-  transition: all 0.3s;
-}
-
-nav a:hover {
-  color: #4BB800;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-  animation: vibrate 0.37499s linear infinite;
-}
-
-nav a.active {
-  color: #4BB800;
-  border-left: 2px solid #4BB800;
-}
-
-/* Navigation Base Styles */
-nav {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0; /* Edge to top */
   width: 100px;
-  height: auto;
+  height: 100vh; /* Full height */
   background: #121212;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  gap: 0.8rem;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 3px 0 10px #4BB800;
+  gap: 3rem;
+  border-radius: 0; /* No rounded corners */
+  box-shadow: 3px 0 10px #FDB813;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 nav:hover {
-  box-shadow: 3px 0 15px #4BB800;
+  box-shadow: 3px 0 15px #FDB813;
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -119,20 +86,20 @@ nav a {
   color: #00CED1;
   text-decoration: none;
   font-weight: bold;
-  padding: 15px;
+  padding: 20px 15px;
   transition: all 0.3s;
   text-align: center;
 }
 
 nav a:hover {
-  color: #4BB800;
+  color: #FDB813;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-  animation: vibrate 0.37499s linear infinite;
+  animation: vibrate 0.67499s linear infinite;
 }
 
 nav a.active {
-  color: #4BB800;
-  border-left: 2px solid #4BB800;
+  color: #FDB813;
+  border-left: 2px solid #FDB813;
 }
 
 /* Hamburger Button Styles */
@@ -359,12 +326,12 @@ nav a.active {
   color: inherit; /* Inherit text color */
   cursor: pointer; /* Finger pointer on hover */
   background: #1E1E1E; /* Dark base */
-  border: 1px solid #7CFC00; /* Your glow color */
+  border: 1px solid #FDB813; /* Your glow color */
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow:
     0 0 10px rgba(75, 184, 0, 0.3), /* Inner glow */
-    4px 4px 0 #7CFC00; /* "Sticky note" offset */
+    4px 4px 0 #FDB813; /* "Sticky note" offset */
   transition: all 0.3s ease;
   max-width: 300px; /* Control card width */
   text-align: center;
@@ -375,7 +342,7 @@ nav a.active {
   transform: translateY(-5px); /* Slight lift */
   box-shadow:
     0 0 15px rgba(75, 184, 0, 0.6),
-    6px 6px 0 #7CFC00; /* Bigger "peel" effect */
+    6px 6px 0 #FDB813; /* Bigger "peel" effect */
     background: rgba(75, 184, 0, 0.05); /* Subtle glow fill */
 }
 
@@ -786,7 +753,7 @@ nav a.active {
 }
 
 .quote-author {
-    color: #7CFC00;
+    color: #FDB813;
     font-size: 1rem;
     font-weight: bold;
     text-shadow: 0 0 1px rgba(124, 252, 0, 0.5);
@@ -1057,7 +1024,7 @@ nav a.active {
 }
 
 .site-footer {
-    text-align: center;
+    text-align: right;
     padding: 0.8rem;
     color: #00CED1;
     font-size: 0.9rem;
