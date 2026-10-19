@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../s.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Saif: ONERA M6 Instructions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body class="dark-mode">
+
+    <div class="content-wrapper" id="contentWrapper">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <nav class="nav-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="../../projects.html">Projects</a>
+                    <a href="../../research.html">Research</a>
+                    <a href="../../index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Projects Hero Ribbon -->
+        <section class="projects-hero">
+            <div class="container">
+                <div class="projects-hero-grid">
+                    <h1 class="projects-title reveal-top">ONERA M6 Instructions</h1>
+                    <div class="projects-hero-line fade-on-scroll"></div>
+                    <p class="hero-about-text reveal-dramatic">
+                         A Structured Manual on 3D CFD Simulation of
+                        <i>ONERA M6</i> Wing at Transonic Cruise Conditions (Mach 0.84)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+           SOFTWARE SHOWCASE — Text + Subheaders
+           ============================================ -->
+        <section class="text-showcase fade-on-scroll">
+            <div class="container">
+
+                <section class="text-showcase">
+
+                <!-- Overview -->
+                <div class="text-block">
+                    <h2 class="text-subheader">Background & Overview</h2>
+                    <p class="text-main">
+                        Capturing the behavior of a 3D wing at transonic speed can be tricky, partly because of the sheer amount of
+                        'mathematics' involved underneath, but also partly this regime of flow is genuinely unstable. Shockwave and all,
+                        not to mention resolving boundary layers properly at such high Reynolds Number - yes, it gets messy. Add some Angle
+                        of Attack to the mix, and we have something very interesting, albeit slightly more 'difficult' than a 2D simulation
+                        problem to deal with. But of course, one must understand such constraints, fluid behavior, and work around them to
+                        make sure their design holds under violent aerodynamic conditions. I mean, that's what 'trying to be an aerodynamicist'
+                        means anyways, eh?
+                    <span class="spacer"></span>
+                        Lucky for us however, this flow condition is one of the most studied subject matters with numerous literatures. Specifically,
+                        for the design choice of this instruction - ONERA M6 wing. It is a transonic wing with a supercritical airfoil profile - and
+                        the geometry is readily available thanks to the good people at ONERA and NASA. In addition, there are entire database for the
+                        exact flow condition, for the exact wing model - both analytical and experimental. So, there is a ground based on which we can
+                        evaluate how 'wrong' our study might be!
+                    <span class="spacer"></span>
+                        Problem is, despite all the literatures, turbulence model database, and numerous graphs being available - there is little to no
+                        instructions on how to actually do the analysis by your own, in your own 'potato' PC (when it comes to 3D CFD, even the latest and
+                        greatest consumer-grade PCs are still potatoes), without being involved with a lab or something like that. To my understanding, there
+                        are some manuals (case-specific) on various aerodynamic analysis - but for the most part they are extremely 'gated', meaning they are
+                        only available to people involved in said labs, or departments. So, there is a gap between learning a canonical example of an aerodynamic
+                        analysis of a transonic 3D wing, and a 'hobbyist' trying to learn transonic CFD on their own.
+                    <span class="spacer"></span>
+                        This is an attempt to bridge the gap. 
+                        When I first learned about the 3D transonic analysis, I faced so many pitfalls (don't ask me about generating a structured mesh), so
+                        many errors, so many '<i>Computer Says No</i>' moments. I logged most of them, and I thought - these logs could help (with some narrative 'story-telling')
+                        someone who wants to learn about transonic aerodynamic analysis. Students, educators, researchers, and of course; my future-self who will surely
+                        forget 97.5% of what he learned back in the day.
+                    <span class="spacer"></span>
+                        The choice of solver for this project is ANSYS Fluent.
+                    <span class="spacer"></span>
+                        I tried to be as thorough, and as detailed as possible in the making of the instruction. Since under the hood, the whole thing is just a giant math equation(s),
+                        one minor detail deviated WILL force the solver to throw tantrums in order of magnitudes that might just question your sanity.
+                    <span class="spacer"></span>
+                        Don't ask me how I know that!
+                    <span class="spacer"></span>
+
+                    </p>
+                </div>
+
+                <section class="image-grid-section">
+                    <div class="container">
+                        <div class="image-grid">
+                            <div class="image-grid-item">
+                                <img src="ONERA/o1.jpg" alt="Render 1">
+                                <div class="image-grid-overlay">
+                                    <h3>Extracting Wing from Fluid Domain</h3>
+                                </div>
+                            </div>
+                            <div class="image-grid-item">
+                                <img src="ONERA/o2.jpg" alt="Render 2">
+                                <div class="image-grid-overlay">
+                                    <h3>Structuring Mesh on Wing Surface</h3>
+                                </div>
+                            </div>
+                            <div class="image-grid-item">
+                                <img src="ONERA/o3.jpg" alt="Render 2">
+                                <div class="image-grid-overlay">
+                                    <h3>Air Properties Setup</h3>
+                                </div>
+                            </div>
+                            <div class="image-grid-item">
+                                <img src="ONERA/o4.png" alt="Render 2">
+                                <div class="image-grid-overlay">
+                                    <h3>Pretty Shockwave from CFD-Post!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Abstract -->
+                <div class="text-block">
+                        <p class="text-main"> Captivated yet!? Please consult the full instruction manual linked at the end of the page.
+                           Additionally, you can also find useful citations and references linked below. I hope this instruction will help
+                            you, just like I hope it will help me in 3 months when I will forget what a 'farfield' is! <span class="spacer"></span> </p>
+                    <h2 class="text-subheader">Overview of the Flow Condition</h2>
+                    <p class="text-main">
+                        <strong>+</strong> Geometry: <i>ONERA M6</i> <br>
+                        <strong>+</strong> Root Chord: <i>0.81m</i> <br>
+                        <strong>+</strong> Fluid Velocity: <i>Mach 0.84</i> <br>
+                        <strong>+</strong> Angle of Attack: <i>3.06°</i> <br>
+                        <strong>+</strong> Reynold's Number: <i>14.6 million</i> <br>
+                        <strong>+</strong> Domain: <i>Riemann Hemisphere</i> <br>
+                        <strong>+</strong> Inlet Type: <i>Pressure Farfield</i> <br>
+                        <strong>+</strong> Operating Pressure: <i>0 Pa</i> <br>
+                        <strong>+</strong> Gauge Pressure: <i>97913.3 Pa</i> <br>
+                        <strong>+</strong> Equation: <i>Spalart-Allmaras</i> <br>
+                        <span class="spacer"></span>
+                    </p>
+                    <h2 class="text-subheader">Instruction Manual Summary</h2>
+                    <p class="text-main">
+                        &emsp;● Theory Overview <br>
+                        &emsp;● Geometry Clean Up: <br>
+                        &emsp;● Fluid Domain & Meshing: <br>
+                        &emsp;● Solver Setup: <br>
+                        <span class="spacer"></span>
+                        If you follow the instruction properly, I hope the data you generate will be around a 'respectable' ballpark of the actual, literature-backed
+                        numbers. Good luck, chances are you are going to need it.
+                        <span class="spacer"></span>
+                        Godspeed, fellow aerodynamicist in the making!<br>
+                    </p>
+                </div>
+
+                    <div class="container fade-on-scroll">
+                    <div class="software-badges">
+                        <span class="badge">Aerodynamics</span>
+                        <span class="badge">ONERA</span>
+                        <span class="badge">ANSYS</span>
+                        <span class="badge">Transonic</span>
+                        <span class="badge">Spalart-Allmaras</span>
+                    </div>
+                </div>
+
+
+                <!-- PDF Link -->
+                <div class="text-footer fade-on-scroll">
+                    <a href="ONERA/ONERAM6_CFDManual.pdf" class="text-cta" target="_blank" rel="noopener noreferrer">View full Instructions Manual →</a>
+                </div>
+
+                <div class="text-footer fade-on-scroll">
+                    <a href="https://tmbwg.github.io/turbmodels/onerawingnumerics_val.html" class="text-cta" target="_blank" rel="noopener noreferrer">Turbulence Modeling Resource →</a>
+                </div>
+
+                <div class="text-footer fade-on-scroll">
+                    <a href="https://ntrs.nasa.gov/api/citations/20190000713/downloads/20190000713.pdf" class="text-cta" target="_blank" rel="noopener noreferrer">Reference Literature: Diskin et al., 2018 →</a>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="future-content">
+            <p class="coming-soon">© 2026 Omar Saif · All Rights Reserved | Powered by Caffeine ☕</p>
+        </div>
+
+<script>
+// ============================================
+// 0. PAGE LOAD — Force Content to Show
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('contentWrapper');
+    if (wrapper) {
+        wrapper.classList.add('visible');
+        wrapper.style.opacity = '1';
+        wrapper.style.visibility = 'visible';
+    }
+
+    const overlay = document.querySelector('.intro-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    document.body.style.overflow = 'auto';
+});
+
+// ============================================
+// 1. NAVIGATION PILL — Scroll Behavior
+// ============================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    const ENTER_SCROLL = 80;
+    const EXIT_SCROLL = 40;
+
+    let isScrolled = false;
+    let ticking = false;
+    let settleTimer = null;
+
+    function handleScroll() {
+        const y = window.scrollY;
+
+        if (!isScrolled && y > ENTER_SCROLL) {
+            isScrolled = true;
+            header.classList.add("scrolled");
+            header.classList.remove("settled");
+
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+                header.classList.add("settled");
+            }, 500);
+        } else if (isScrolled && y < EXIT_SCROLL) {
+            isScrolled = false;
+            clearTimeout(settleTimer);
+            header.classList.remove("settled");
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});
+
+// ============================================
+// 2. SMOOTH SCROLL TO SECTION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            if (href.endsWith('.html') || href.includes('.html')) return;
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href;
+
+                if (targetId === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '/');
+                } else {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (targetSection.offsetHeight / 2);
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                        history.pushState(null, null, targetId);
+                    }
+                }
+            }
+        });
+    });
+});
+
+// ============================================
+// 3. EXPANDING GRID — Hover Logic
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.getElementById('expandingGrid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.grid-card');
+    let lastHoveredIndex = 0;
+
+    function setWideCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('wide', i === index);
+        });
+        lastHoveredIndex = index;
+    }
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => setWideCard(index));
+    });
+
+    grid.addEventListener('mouseleave', () => {
+        setWideCard(lastHoveredIndex);
+    });
+
+    let touchTimeout;
+    cards.forEach((card, index) => {
+        card.addEventListener('touchstart', () => {
+            if (card.classList.contains('wide')) return;
+            setWideCard(index);
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                setWideCard(lastHoveredIndex);
+            }, 3000);
+        });
+    });
+
+    setWideCard(0);
+});
+
+// ============================================
+// 4. PUDDLE RIPPLE EFFECT
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('rippleCanvas');
+    if (!canvas) return;
+
+    const wrapper = canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let ripples = [];
+
+    function resize() {
+        const rect = wrapper.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        width = canvas.width;
+        height = canvas.height;
+    }
+
+    function addRipple(x, y) {
+        ripples.push({
+            x, y,
+            radius: 2,
+            maxRadius: 45,
+            opacity: 0.3,
+            speed: 0.5 + Math.random() * 0.3,
+            life: 1,
+            decay: 0.01 + Math.random() * 0.005
+        });
+    }
+
+    function updateRipples() {
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const r = ripples[i];
+            r.radius += r.speed;
+            r.life -= r.decay;
+            r.opacity = r.life * 0.3;
+            if (r.life <= 0 || r.radius > r.maxRadius) {
+                ripples.splice(i, 1);
+            }
+        }
+    }
+
+    function drawRipples() {
+        ctx.clearRect(0, 0, width, height);
+        for (const r of ripples) {
+            const o = r.opacity;
+            const grad = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius);
+            grad.addColorStop(0, `rgba(154, 139, 128, ${o * 0.15})`);
+            grad.addColorStop(0.5, `rgba(154, 139, 128, ${o * 0.1})`);
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius * 0.9, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(154, 139, 128, ${o * 0.08})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        updateRipples();
+        drawRipples();
+        requestAnimationFrame(animate);
+    }
+
+    function handleMove(e) {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    wrapper.addEventListener('mousemove', handleMove);
+    wrapper.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        const rect = wrapper.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }, { passive: true });
+
+    animate();
+});
+
+// ============================================
+// 5. SCROLL-TRIGGERED REVEALS (Mobile‑Aware)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth < 768;
+    const elements = document.querySelectorAll('.fade-on-scroll, .reveal-dramatic, .reveal-top');
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: isMobile ? 0.05 : 0.15,
+        rootMargin: isMobile ? "0px" : "0px 0px -50px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+                observer.unobserve(el);
+            }
+        });
+    }, 100);
+});
+
+// ============================================
+// 6. CINEMATIC DIVIDER — Parallax Zoom + Blur
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const divider = document.querySelector('.cinematic-divider');
+    if (!divider) return;
+
+    let ticking = false;
+
+    function updateDivider() {
+        const rect = divider.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const visiblePercent = Math.min(Math.max((viewportHeight - rect.top) / viewportHeight, 0), 1);
+
+        const zoom = 1 + (visiblePercent * 0.08);
+        const blur = visiblePercent * 2;
+
+        divider.style.transform = `scale(${zoom})`;
+        divider.style.filter = `blur(${blur}px)`;
+        divider.style.opacity = 0.85 - (visiblePercent * 0.15);
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateDivider();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    updateDivider();
+});
+
+
+// ============================================
+// 7. IMAGE GRID — Tap to Reveal
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on touch / small screens
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    const isSmall = window.innerWidth <= 768;
+    if (!isTouch && !isSmall) return;
+
+    const items = document.querySelectorAll('.image-grid-item');
+    if (items.length === 0) return;
+
+    items.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // If already revealed, hide immediately
+            if (this.classList.contains('revealed')) {
+                this.classList.remove('revealed');
+                clearTimeout(this.hideTimer);
+                return;
+            }
+
+            // Hide any other revealed items
+            items.forEach(other => {
+                if (other !== this) {
+                    other.classList.remove('revealed');
+                    clearTimeout(other.hideTimer);
+                }
+            });
+
+            // Reveal this one
+            this.classList.add('revealed');
+
+            // Auto-hide after 3 seconds
+            clearTimeout(this.hideTimer);
+            this.hideTimer = setTimeout(() => {
+                this.classList.remove('revealed');
+            }, 3000);
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>

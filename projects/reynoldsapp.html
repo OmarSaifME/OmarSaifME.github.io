@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../s.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Saif: Reynold's App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body class="dark-mode">
+
+    <div class="content-wrapper" id="contentWrapper">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <nav class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../research.html">Research</a>
+                    <a href="../index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Projects Hero Ribbon -->
+        <section class="projects-hero">
+            <div class="container">
+                <div class="projects-hero-grid">
+                    <h1 class="projects-title reveal-top">Reynold's App</h1>
+                    <div class="projects-hero-line fade-on-scroll"></div>
+                    <p class="hero-about-text reveal-dramatic">
+                        A software that includes helpful fluid mechanical calculations for CFD and beyond, developed with Python.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+           SOFTWARE SHOWCASE — Text + Subheaders
+           ============================================ -->
+        <section class="text-showcase fade-on-scroll">
+            <div class="container">
+
+                <section class="text-showcase">
+
+                <!-- Overview -->
+                <div class="text-block">
+                    <h2 class="text-subheader">Background & Overview</h2>
+                    <p class="text-main">
+                        Computational Fluid Dynamics require a lot of pre-processing (and validation) calculation, that are not always
+                        directly embedded in the software of your choosing. For example, if you want to calculate the vector components of
+                        an 'angled flow' for your simulation, you need to do some trigonometric calculation that is usually beyond the scope
+                        of the CFD tool. And pulling a calculator, pencil, and paper every time you need to correct/update
+                        a settings value could hinder your progress. To address such issues, I have built a standalone desktop tool that covers some calculations on
+                        your behalf. Three modules have been developed for the current version of the app. More will be added based on needs. The app (and
+                        the source code) can be found on the git repository linked below. It is an open-sourced project with MIT licensing, designed to help students
+                        and academics in their CFD studies.
+                    <span class="spacer"></span>
+                        Of course, to the critical eye; this could be considered as a glorified Excel workbook, but I digress!
+                    </p>
+                </div>
+
+                <!-- ============================================
+                   SCREENSHOTS — 3-Image Grid (Full Width)
+                   ============================================ -->
+                <div class="screenshot-grid">
+                    <div class="screenshot-item">
+                        <img src="ra/r1.jpg" alt="Screenshot 1">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="ra/r2.jpg" alt="Screenshot 2">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="ra/r4.jpg" alt="Screenshot 3">
+                    </div>
+                </div>
+
+                <!-- Modules -->
+                <div class="text-block">
+                    <h2 class="text-subheader">Module 1: Angle of Attack</h2>
+                    <p class="text-main">
+                        This module asks the user for the angle of attack, and flow velocity as
+                        inputs. Given the data, it calculates velocity components (vector) for X
+                        and Y axis, alongside values for drag and lift force vector - critical for
+                        coefficient report definitions.<br><br>
+                    </p>
+                    <h2 class="text-subheader">Module 2: Reynolds Number Conversion</h2>
+                    <p class="text-main">
+                        This module asks the user for the flow velocity, alongside some other critical
+                        values (characteristic length, fluid density, viscosity) to calculate the <strong> Re </strong>
+                        value. Based on the mode, it can also do the vice-versa.<br></br>
+                    </p>
+                    <h2 class="text-subheader">Module 3: Grid Convergence Index</h2>
+                    <p class="text-main">
+                        One of the most critical components for any CFD study is the grid independence validation. Grid
+                        Convergence Index (based on <i>Roache, 1994</i>) is a mathematical tool to quantify the uncertainty
+                        of a given mesh for a computational study. This module takes the refinement ratio, factor of safety,
+                        and values of key variables (coefficients for example) assuming a 3-grid setup (coarse, medium, fine);
+                        and then computes GCI for fine mesh, GCI estimates, and declares the state of <i>asymptotic range</i>
+                        for the given mesh.<br></br>
+                    </p>
+                </div>
+
+
+                    <div class="container fade-on-scroll">
+                    <div class="software-badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">Tkinter</span>
+                        <span class="badge">NumPy</span>
+                    </div>
+                </div>
+
+
+                <!-- GitHub Link -->
+                <div class="text-footer fade-on-scroll">
+                    <a href="https://github.com/OmarSaifME/ReynoldsApp" class="text-cta" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="future-content">
+            <p class="coming-soon">© 2026 Omar Saif · All Rights Reserved | Powered by Caffeine ☕</p>
+        </div>
+
+<script>
+// ============================================
+// 0. PAGE LOAD — Force Content to Show
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('contentWrapper');
+    if (wrapper) {
+        wrapper.classList.add('visible');
+        wrapper.style.opacity = '1';
+        wrapper.style.visibility = 'visible';
+    }
+
+    const overlay = document.querySelector('.intro-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    document.body.style.overflow = 'auto';
+});
+
+// ============================================
+// 1. NAVIGATION PILL — Scroll Behavior
+// ============================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    const ENTER_SCROLL = 80;
+    const EXIT_SCROLL = 40;
+
+    let isScrolled = false;
+    let ticking = false;
+    let settleTimer = null;
+
+    function handleScroll() {
+        const y = window.scrollY;
+
+        if (!isScrolled && y > ENTER_SCROLL) {
+            isScrolled = true;
+            header.classList.add("scrolled");
+            header.classList.remove("settled");
+
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+                header.classList.add("settled");
+            }, 500);
+        } else if (isScrolled && y < EXIT_SCROLL) {
+            isScrolled = false;
+            clearTimeout(settleTimer);
+            header.classList.remove("settled");
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});
+
+// ============================================
+// 2. SMOOTH SCROLL TO SECTION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            if (href.endsWith('.html') || href.includes('.html')) return;
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href;
+
+                if (targetId === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '/');
+                } else {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (targetSection.offsetHeight / 2);
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                        history.pushState(null, null, targetId);
+                    }
+                }
+            }
+        });
+    });
+});
+
+// ============================================
+// 3. EXPANDING GRID — Hover Logic
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.getElementById('expandingGrid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.grid-card');
+    let lastHoveredIndex = 0;
+
+    function setWideCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('wide', i === index);
+        });
+        lastHoveredIndex = index;
+    }
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => setWideCard(index));
+    });
+
+    grid.addEventListener('mouseleave', () => {
+        setWideCard(lastHoveredIndex);
+    });
+
+    let touchTimeout;
+    cards.forEach((card, index) => {
+        card.addEventListener('touchstart', () => {
+            if (card.classList.contains('wide')) return;
+            setWideCard(index);
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                setWideCard(lastHoveredIndex);
+            }, 3000);
+        });
+    });
+
+    setWideCard(0);
+});
+
+// ============================================
+// 4. PUDDLE RIPPLE EFFECT
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('rippleCanvas');
+    if (!canvas) return;
+
+    const wrapper = canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let ripples = [];
+
+    function resize() {
+        const rect = wrapper.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        width = canvas.width;
+        height = canvas.height;
+    }
+
+    function addRipple(x, y) {
+        ripples.push({
+            x, y,
+            radius: 2,
+            maxRadius: 45,
+            opacity: 0.3,
+            speed: 0.5 + Math.random() * 0.3,
+            life: 1,
+            decay: 0.01 + Math.random() * 0.005
+        });
+    }
+
+    function updateRipples() {
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const r = ripples[i];
+            r.radius += r.speed;
+            r.life -= r.decay;
+            r.opacity = r.life * 0.3;
+            if (r.life <= 0 || r.radius > r.maxRadius) {
+                ripples.splice(i, 1);
+            }
+        }
+    }
+
+    function drawRipples() {
+        ctx.clearRect(0, 0, width, height);
+        for (const r of ripples) {
+            const o = r.opacity;
+            const grad = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius);
+            grad.addColorStop(0, `rgba(154, 139, 128, ${o * 0.15})`);
+            grad.addColorStop(0.5, `rgba(154, 139, 128, ${o * 0.1})`);
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius * 0.9, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(154, 139, 128, ${o * 0.08})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        updateRipples();
+        drawRipples();
+        requestAnimationFrame(animate);
+    }
+
+    function handleMove(e) {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    wrapper.addEventListener('mousemove', handleMove);
+    wrapper.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        const rect = wrapper.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }, { passive: true });
+
+    animate();
+});
+
+// ============================================
+// 5. SCROLL-TRIGGERED REVEALS (Mobile‑Aware)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth < 768;
+    const elements = document.querySelectorAll('.fade-on-scroll, .reveal-dramatic, .reveal-top');
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: isMobile ? 0.05 : 0.15,
+        rootMargin: isMobile ? "0px" : "0px 0px -50px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+                observer.unobserve(el);
+            }
+        });
+    }, 100);
+});
+
+// ============================================
+// 6. CINEMATIC DIVIDER — Parallax Zoom + Blur
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const divider = document.querySelector('.cinematic-divider');
+    if (!divider) return;
+
+    let ticking = false;
+
+    function updateDivider() {
+        const rect = divider.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const visiblePercent = Math.min(Math.max((viewportHeight - rect.top) / viewportHeight, 0), 1);
+
+        const zoom = 1 + (visiblePercent * 0.08);
+        const blur = visiblePercent * 2;
+
+        divider.style.transform = `scale(${zoom})`;
+        divider.style.filter = `blur(${blur}px)`;
+        divider.style.opacity = 0.85 - (visiblePercent * 0.15);
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateDivider();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    updateDivider();
+});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../s.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Saif: NACA0012 Simulation Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body class="dark-mode">
+
+    <div class="content-wrapper" id="contentWrapper">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <nav class="nav-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="../../projects.html">Projects</a>
+                    <a href="../../research.html">Research</a>
+                    <a href="../../index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Projects Hero Ribbon -->
+        <section class="projects-hero">
+            <div class="container">
+                <div class="projects-hero-grid">
+                    <h1 class="projects-title reveal-top">NACA 0012 Simulation Results</h1>
+                    <div class="projects-hero-line fade-on-scroll"></div>
+                    <p class="hero-about-text reveal-dramatic">
+                         Discussions on generating and reading various results and contour plots for
+                        <i>NACA 0012</i> Airfoil in ANSYS Fluent
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+           SOFTWARE SHOWCASE — Text + Subheaders
+           ============================================ -->
+        <section class="text-showcase fade-on-scroll">
+            <div class="container">
+
+                <section class="text-showcase">
+
+                <!-- Overview -->
+                <div class="text-block">
+                    <h2 class="text-subheader">Background & Overview</h2>
+                    <p class="text-main">
+                        Once a simulation is done, it's time to 'read' the results for the study. This module aims to assist
+                        CFD practitioners to generate various plots for a given finished CFD run, and gives an overview of how
+                        to read them for the understanding of the study. Please note, all the plots shown in this page were
+                        generated in the Fluent native window. I will be updating this with CFD-post specific techniques, common
+                        and the general standard of aerodynamic study. When I was building these modules, I didn't 'hit my stride'
+                        in CFD-post analysis and therefore - those specific instructions are missing. I am still learning and I welcome
+                        feedback!
+                    <span class="spacer"></span>
+                        Please consult the pdf files at the end of the page.
+                    </p>
+                </div>
+
+                <section class="image-grid-section">
+                    <div class="container">
+                        <div class="image-grid">
+                            <div class="image-grid-item">
+                                <img src="NACA0012/nx1.jpg" alt="Render 1">
+                                <div class="image-grid-overlay">
+                                    <h3>Setting Up Velocity Contour Plot</h3>
+                                </div>
+                            </div>
+                            <div class="image-grid-item">
+                                <img src="NACA0012/nx2.jpg" alt="Render 2">
+                                <div class="image-grid-overlay">
+                                    <h3>Velocity Contour with Skewed Wake Line</h3>
+                                </div>
+                            </div>
+                            <div class="image-grid-item">
+                                <img src="NACA0012/nx3.jpg" alt="Render 2">
+                                <div class="image-grid-overlay">
+                                    <h3>Wall Shear Stress Plot</h3>
+                                </div>
+                            </div>
+                            <div class="image-grid-item">
+                                <img src="NACA0012/nx4.jpg" alt="Render 2">
+                                <div class="image-grid-overlay">
+                                    <h3>Pressure Coefficient Curve Setup</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Abstract -->
+                <div class="text-block">
+                    <h2 class="text-subheader">Contour Plot List</h2>
+                    <p class="text-main">
+                        &emsp;● Velocity Contour <br>
+                        &emsp;● Pressure Contour <br>
+                        &emsp;● Pressure Coefficient Plot <br>
+                        &emsp;● Velocity Vector Plot <br>
+                        &emsp;● Wall Shear Plot <br>
+                        <span class="spacer"></span>
+                        The details of each plot (and some theoretical background where necessary) can be found in the following pdf files.
+                        I will be updating this page with CFD-post instructions for the same plots with in depth analysis in the future.
+                        <span class="spacer"></span>
+                        I hope you will find this section helpful for your next CFD study - alongside the instruction manual for the NACA0012
+                        airfoil. Cheers!<br>
+                    </p>
+                </div>
+
+                    <div class="container fade-on-scroll">
+                    <div class="software-badges">
+                        <span class="badge">Aerodynamics</span>
+                        <span class="badge">Airfoil</span>
+                        <span class="badge">ANSYS</span>
+                        <span class="badge">NACA 0012</span>
+                    </div>
+                </div>
+
+
+                <!-- PDF Link -->
+
+                <div class="text-footer fade-on-scroll">
+                    <a href="NACA0012/NACA0012_VelocityPressureContour.pdf" class="text-cta" target="_blank" rel="noopener noreferrer">Velocity and Pressure Contour Plot →</a>
+                </div>
+                <div class="text-footer fade-on-scroll">
+                    <a href="NACA0012/NACA0012_CpPlot.pdf" class="text-cta" target="_blank" rel="noopener noreferrer">Pressure Coefficient Plot →</a>
+                </div>
+                <div class="text-footer fade-on-scroll">
+                    <a href="NACA0012/NACA0012_VelocityVectorPlot.pdf" class="text-cta" target="_blank" rel="noopener noreferrer">Velocity Vector Plot →</a>
+                </div>
+                <div class="text-footer fade-on-scroll">
+                    <a href="NACA0012/NACA0012_WSSPlot.pdf" class="text-cta" target="_blank" rel="noopener noreferrer">Wall Shear Plot →</a>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="future-content">
+            <p class="coming-soon">© 2026 Omar Saif · All Rights Reserved | Powered by Caffeine ☕</p>
+        </div>
+
+<script>
+// ============================================
+// 0. PAGE LOAD — Force Content to Show
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('contentWrapper');
+    if (wrapper) {
+        wrapper.classList.add('visible');
+        wrapper.style.opacity = '1';
+        wrapper.style.visibility = 'visible';
+    }
+
+    const overlay = document.querySelector('.intro-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    document.body.style.overflow = 'auto';
+});
+
+// ============================================
+// 1. NAVIGATION PILL — Scroll Behavior
+// ============================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    const ENTER_SCROLL = 80;
+    const EXIT_SCROLL = 40;
+
+    let isScrolled = false;
+    let ticking = false;
+    let settleTimer = null;
+
+    function handleScroll() {
+        const y = window.scrollY;
+
+        if (!isScrolled && y > ENTER_SCROLL) {
+            isScrolled = true;
+            header.classList.add("scrolled");
+            header.classList.remove("settled");
+
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+                header.classList.add("settled");
+            }, 500);
+        } else if (isScrolled && y < EXIT_SCROLL) {
+            isScrolled = false;
+            clearTimeout(settleTimer);
+            header.classList.remove("settled");
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});
+
+// ============================================
+// 2. SMOOTH SCROLL TO SECTION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            if (href.endsWith('.html') || href.includes('.html')) return;
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href;
+
+                if (targetId === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '/');
+                } else {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (targetSection.offsetHeight / 2);
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                        history.pushState(null, null, targetId);
+                    }
+                }
+            }
+        });
+    });
+});
+
+// ============================================
+// 3. EXPANDING GRID — Hover Logic
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.getElementById('expandingGrid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.grid-card');
+    let lastHoveredIndex = 0;
+
+    function setWideCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('wide', i === index);
+        });
+        lastHoveredIndex = index;
+    }
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => setWideCard(index));
+    });
+
+    grid.addEventListener('mouseleave', () => {
+        setWideCard(lastHoveredIndex);
+    });
+
+    let touchTimeout;
+    cards.forEach((card, index) => {
+        card.addEventListener('touchstart', () => {
+            if (card.classList.contains('wide')) return;
+            setWideCard(index);
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                setWideCard(lastHoveredIndex);
+            }, 3000);
+        });
+    });
+
+    setWideCard(0);
+});
+
+// ============================================
+// 4. PUDDLE RIPPLE EFFECT
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('rippleCanvas');
+    if (!canvas) return;
+
+    const wrapper = canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let ripples = [];
+
+    function resize() {
+        const rect = wrapper.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        width = canvas.width;
+        height = canvas.height;
+    }
+
+    function addRipple(x, y) {
+        ripples.push({
+            x, y,
+            radius: 2,
+            maxRadius: 45,
+            opacity: 0.3,
+            speed: 0.5 + Math.random() * 0.3,
+            life: 1,
+            decay: 0.01 + Math.random() * 0.005
+        });
+    }
+
+    function updateRipples() {
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const r = ripples[i];
+            r.radius += r.speed;
+            r.life -= r.decay;
+            r.opacity = r.life * 0.3;
+            if (r.life <= 0 || r.radius > r.maxRadius) {
+                ripples.splice(i, 1);
+            }
+        }
+    }
+
+    function drawRipples() {
+        ctx.clearRect(0, 0, width, height);
+        for (const r of ripples) {
+            const o = r.opacity;
+            const grad = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius);
+            grad.addColorStop(0, `rgba(154, 139, 128, ${o * 0.15})`);
+            grad.addColorStop(0.5, `rgba(154, 139, 128, ${o * 0.1})`);
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius * 0.9, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(154, 139, 128, ${o * 0.08})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        updateRipples();
+        drawRipples();
+        requestAnimationFrame(animate);
+    }
+
+    function handleMove(e) {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    wrapper.addEventListener('mousemove', handleMove);
+    wrapper.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        const rect = wrapper.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }, { passive: true });
+
+    animate();
+});
+
+// ============================================
+// 5. SCROLL-TRIGGERED REVEALS (Mobile‑Aware)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth < 768;
+    const elements = document.querySelectorAll('.fade-on-scroll, .reveal-dramatic, .reveal-top');
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: isMobile ? 0.05 : 0.15,
+        rootMargin: isMobile ? "0px" : "0px 0px -50px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+                observer.unobserve(el);
+            }
+        });
+    }, 100);
+});
+
+// ============================================
+// 6. CINEMATIC DIVIDER — Parallax Zoom + Blur
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const divider = document.querySelector('.cinematic-divider');
+    if (!divider) return;
+
+    let ticking = false;
+
+    function updateDivider() {
+        const rect = divider.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const visiblePercent = Math.min(Math.max((viewportHeight - rect.top) / viewportHeight, 0), 1);
+
+        const zoom = 1 + (visiblePercent * 0.08);
+        const blur = visiblePercent * 2;
+
+        divider.style.transform = `scale(${zoom})`;
+        divider.style.filter = `blur(${blur}px)`;
+        divider.style.opacity = 0.85 - (visiblePercent * 0.15);
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateDivider();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    updateDivider();
+});
+
+
+// ============================================
+// 7. IMAGE GRID — Tap to Reveal
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on touch / small screens
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    const isSmall = window.innerWidth <= 768;
+    if (!isTouch && !isSmall) return;
+
+    const items = document.querySelectorAll('.image-grid-item');
+    if (items.length === 0) return;
+
+    items.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // If already revealed, hide immediately
+            if (this.classList.contains('revealed')) {
+                this.classList.remove('revealed');
+                clearTimeout(this.hideTimer);
+                return;
+            }
+
+            // Hide any other revealed items
+            items.forEach(other => {
+                if (other !== this) {
+                    other.classList.remove('revealed');
+                    clearTimeout(other.hideTimer);
+                }
+            });
+
+            // Reveal this one
+            this.classList.add('revealed');
+
+            // Auto-hide after 3 seconds
+            clearTimeout(this.hideTimer);
+            this.hideTimer = setTimeout(() => {
+                this.classList.remove('revealed');
+            }, 3000);
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>

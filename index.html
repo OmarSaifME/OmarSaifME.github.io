@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="s.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Saif Porfolio</title>
+
+</head>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<body class="dark-mode">
+
+    <div class="content-wrapper" id="contentWrapper">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="site-header fade-on-scroll">
+            <div class="container nav-container">
+                <nav class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#research">Research</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- HERO STATION -->
+        <section class="hero-station">
+            <div class="hero-background fade-on-scroll">
+                <div class="hero-content">
+                        <div class="hero-main">
+                            <div class="hero-top-group reveal-top">
+                                <h1 class="hero-name">OMAR Saif</h1>
+                                <p class="hero-title">Mechanical Engineer</p>
+                            </div>
+                        </div>
+                    <div class="hero-about reveal-dramatic">
+                        <p class="hero-text">Focused on research across design, fluid mechanics,
+                            and simulation. I understand systems by breaking them and rebuilding them, iteration by iteration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work - Expanding Grid -->
+        <section class="featured-work">
+            <div class="container">
+                <div class="section-header reveal-dramatic">
+                    <h2 class="section-title">Featured Work</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="expanding-grid fade-on-scroll" id="expandingGrid">
+
+                    <div class="grid-card wide" data-project="1" style="--card-image: url('projects/p1.jpg');">
+                        <a href="projects/reynoldsapp.html" class="grid-card-link">
+                            <div class="grid-card-overlay">
+                                <div class="grid-card-content">
+                                    <span class="grid-card-tag">CFD · Software</span>
+                                    <h3 class="grid-card-title">Reynold's App</h3>
+                                    <p class="grid-card-description">CFD Calculation Software</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="grid-card" data-project="3" style="--card-image: url('projects/i1.jpg');">
+                        <a href="projects/notes.html" class="grid-card-link">
+                            <div class="grid-card-overlay">
+                                <div class="grid-card-content">
+                                    <span class="grid-card-tag">CFD · Education</span>
+                                    <h3 class="grid-card-title">Notes</h3>
+                                    <p class="grid-card-description">Instruction manuals on CFD</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="grid-card" data-project="2" style="--card-image: url('research/r1.jpg');">
+                        <a href="research/birdwingcfd.html" class="grid-card-link">
+                            <div class="grid-card-overlay">
+                                <div class="grid-card-content">
+                                    <span class="grid-card-tag">CFD · Research</span>
+                                    <h3 class="grid-card-title">Bird Wing CFD</h3>
+                                    <p class="grid-card-description">Undergraduate thesis</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="grid-card" data-project="4" style="--card-image: url('projects/p4.jpg');">
+                        <a href="projects/productdesign.html" class="grid-card-link">
+                            <div class="grid-card-overlay">
+                                <div class="grid-card-content">
+                                    <span class="grid-card-tag">Design · Rendering</span>
+                                    <h3 class="grid-card-title">Product Design</h3>
+                                    <p class="grid-card-description">Photorealistic renders</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-dots" id="gridDots" aria-hidden="true"></div>
+
+        </section>
+
+        <!-- ============================================
+           SKILLS MARQUEE — Two Rows (Wrapped)
+           ============================================ -->
+
+        <div class="skills-wrapper">
+            <canvas id="rippleCanvas"></canvas>
+
+            <!-- Row 1: CAD & CAE Tools -->
+            <section class="skills-section">
+                <div class="container">
+                    <div class="skills-header">
+                        <h2 class="skills-title fade-on-scroll">CAD & CAE Tools</h2>
+                    </div>
+                    <div class="skills-marquee-wrapper fade-on-scroll">
+                        <div class="skills-marquee fade-on-scroll">
+                            <div class="skills-track">
+
+                                <!-- ANSYS — default -->
+                                <div class="skill-item">
+                                    <span class="icon-wrap">
+                                        <img src="i/ic/a.png" alt="ANSYS" class="skill-icon" loading="eager">
+                                    </span>
+                                </div>
+
+                                <!-- Keyshot — default -->
+                                <div class="skill-item">
+                                    <span class="icon-wrap">
+                                        <img src="i/ic/k.png" alt="Keyshot" class="skill-icon" loading="eager">
+                                    </span>
+                                </div>
+
+                                <!-- SolidWorks — scaled up -->
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-solidworks">
+                                        <img src="i/ic/s.png" alt="SolidWorks" class="skill-icon" loading="eager">
+                                    </span>
+                                </div>
+
+                                <!-- Fusion 360 — scaled up -->
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-fusion">
+                                        <img src="i/ic/f.png" alt="Fusion 360" class="skill-icon" loading="eager">
+                                    </span>
+                                </div>
+
+                                <!-- Inventor — default -->
+                                <div class="skill-item">
+                                    <span class="icon-wrap">
+                                        <img src="i/ic/i.png" alt="Inventor" class="skill-icon" loading="eager">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="skills-divider fade-on-scroll" role="separator" aria-hidden="true"></div>
+
+            <!-- Row 2: Coding & Scripting (Static) -->
+            <section class="skills-section" style="border-top: none; padding-top: 0;">
+                <div class="container">
+                    <div class="skills-header">
+                        <h2 class="skills-title fade-on-scroll">Coding Languages</h2>
+                    </div>
+
+                    <div class="skills-marquee-wrapper marquee-code fade-on-scroll">
+                        <div class="skills-marquee skills-marquee-static fade-on-scroll">
+                            <!-- Single set — no duplicate needed -->
+                            <div class="skills-track skills-track-static">
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-python">
+                                        <img src="i/ic/p.svg" alt="Python" class="skill-icon">
+                                    </span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-cpp">
+                                        <img src="i/ic/c2.webp" alt="C++" class="skill-icon">
+                                    </span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-arduino">
+                                        <img src="i/ic/a.svg" alt="Arduino" class="skill-icon">
+                                    </span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-html">
+                                        <img src="i/ic/h.svg" alt="HTML" class="skill-icon">
+                                    </span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="icon-wrap icon-css">
+                                        <img src="i/ic/c.svg" alt="CSS" class="skill-icon">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================
+       RESEARCH STATION
+       ============================================ -->
+    <section class="research-section reveal-dramatic">
+        <div class="container">
+            <div class="research-content">
+                <h2 class="research-title">Research Focus</h2>
+                <div class="research-line"></div>
+                <p class="research-text">
+                    I study mechanical design and fluids at extreme conditions. My work bridges analysis and simulation-informed design.
+                    Key focus includes:
+                    <span class="highlight">Mechanical Design, Aerodynamics,</span>
+                    and <span class="highlight">Manufacturing.</span>
+                </p>
+
+                <h3 class="research-subheader">Research Ethos</h3>
+                <p class="research-text">
+                    My research ethos revolves around
+                    <span class="highlight">iterative design</span> and a <span class="highlight">commitment to open sciences.</span>
+                    A large part of my work is inspired by <span class="highlight">nature</span>, an exceptional motivator for research
+                    and innovation. I am also motivated by <span class="highlight">disseminating knowledge</span> for the benefit of the scientific
+                    community.
+                <br></br></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cinematic-divider"></section>
+        
+        <!-- ============================================
+           PROJECTS STATION — Minimal B&W Stack
+           ============================================ -->
+        <section class="projects-station fade-on-scroll" id="projects">
+            <div class="container">
+                <div class="section-header fade-on-scroll">
+                    <h2 class="research-title">Projects</h2>
+                    <div class="research-line"></div>
+                </div>
+
+                <div class="projects-stack fade-on-scroll">
+                    <!-- Card 1 -->
+                    <a href="projects/reynoldsapp.html" class="project-card">
+                        <div class="project-card-image" style="background-image: url('projects/p1.jpg');">
+                            <div class="project-card-overlay">
+                                <h3 class="project-card-title">Reynold's App</h3>
+                                <div class="project-card-divider"></div>
+                                <p class="project-card-description">Desktop tool for CFD calculations</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="projects/productdesign.html" class="project-card">
+                        <div class="project-card-image" style="background-image: url('projects/p4.jpg');">
+                            <div class="project-card-overlay">
+                                <h3 class="project-card-title">Product Design</h3>
+                                <div class="project-card-divider"></div>
+                                <p class="project-card-description">Mock-up renders for various products</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="projects/notes.html" class="project-card">
+                        <div class="project-card-image" style="background-image: url('projects/n.webp');">
+                            <div class="project-card-overlay">
+                                <h3 class="project-card-title">Notes</h3>
+                                <div class="project-card-divider"></div>
+                                <p class="project-card-description">Helpful instruction manuals</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Card 4 -->
+                    <a href="projects.html" class="project-card">
+                        <div class="project-card-image" style="background-image: url('i/p.jpeg');">
+                            <div class="project-card-overlay">
+                                <h3 class="project-card-title">More Projects</h3>
+                                <div class="project-card-divider"></div>
+                                <p class="project-card-description">View all Projects</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+           Notes STATION — Minimal B&W Stack
+           ============================================ -->
+        <section class="research-station fade-on-scroll" id="research">
+            <div class="container">
+                <div class="section-header fade-on-scroll">
+                    <h2 class="research-title1">Research</h2>
+                    <div class="research-line"></div>
+                </div>
+
+                <div class="projects-stack fade-on-scroll">
+                    <!-- Card 1 -->
+                    <a href="research/birdwingcfd.html" class="project-card">
+                        <div class="project-card-image" style="background-image: url('research/r1.jpg');">
+                            <div class="project-card-overlay">
+                                <h3 class="project-card-title">Bird Wing CFD</h3>
+                                <div class="project-card-divider"></div>
+                                <p class="project-card-description">Undergrad thesis</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 4 -->
+                    <a href="research.html" class="project-card">
+                        <div class="project-card-image" style="background-image: url('i/r.png');">
+                            <div class="project-card-overlay">
+                                <h3 class="project-card-title">More Research</h3>
+                                <div class="project-card-divider"></div>
+                                <p class="project-card-description">View all Research</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+           Contact STATION — Minimal B&W Stack
+           ============================================ -->
+                <section class="projects-station fade-on-scroll" id="contact">
+                    <div class="container">
+                        <div class="section-header fade-on-scroll">
+                            <h2 class="research-title">Contact</h2>
+                            <div class="research-line"></div>
+                        </div>
+
+                        <div class="contact-stack fade-on-scroll">
+                    <!-- Card 1: Email -->
+                    <a href="mailto:omarsaifabir@gmail.com" class="contact-card">
+                        <div class="contact-card-image" style="background-image: url('i/e.png');">
+                            <div class="contact-card-overlay">
+                                <h3 class="contact-card-title">Email</h3>
+                                <div class="contact-card-divider"></div>
+                                <p class="contact-card-description">Open to research and PhD Inquiry</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: GitHub -->
+                    <a href="https://github.com/OmarSaifME" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-card-image" style="background-image: url('i/g2.png');">
+                            <div class="contact-card-overlay">
+                                <h3 class="contact-card-title">GitHub</h3>
+                                <div class="contact-card-divider"></div>
+                                <p class="contact-card-description">Codebase and project repositories</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: More -->
+                    <a href="about.html" class="contact-card">
+                        <div class="contact-card-image" style="background-image: url('i/b2.png');">
+                            <div class="contact-card-overlay">
+                                <h3 class="contact-card-title">About Me</h3>
+                                <div class="contact-card-divider"></div>
+                                <p class="contact-card-description">Click to find more about me</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+
+        <div class="future-content">
+            <p class="coming-soon">© 2026 Omar Saif · All Rights Reserved | Powered by Caffeine ☕</p>
+        </div>
+    </div>
+
+<script>
+// ============================================
+// 0. PAGE LOAD — Force Content to Show
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('contentWrapper');
+    if (wrapper) {
+        wrapper.classList.add('visible');
+        wrapper.style.opacity = '1';
+        wrapper.style.visibility = 'visible';
+    }
+
+    const overlay = document.querySelector('.intro-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    document.body.style.overflow = 'auto';
+});
+
+// ============================================
+// 1. NAVIGATION PILL — Scroll Behavior
+// ============================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    const ENTER_SCROLL = 80;
+    const EXIT_SCROLL = 40;
+
+    let isScrolled = false;
+    let ticking = false;
+    let settleTimer = null;
+
+    function handleScroll() {
+        const y = window.scrollY;
+
+        if (!isScrolled && y > ENTER_SCROLL) {
+            isScrolled = true;
+            header.classList.add("scrolled");
+            header.classList.remove("settled");
+
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+                header.classList.add("settled");
+            }, 500);
+        } else if (isScrolled && y < EXIT_SCROLL) {
+            isScrolled = false;
+            clearTimeout(settleTimer);
+            header.classList.remove("settled");
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});
+
+// ============================================
+// 2. SMOOTH SCROLL TO SECTION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            if (href.endsWith('.html') || href.includes('.html')) return;
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href;
+
+                if (targetId === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '/');
+                    return;
+                }
+
+                const targetSection = document.querySelector(targetId);
+                if (!targetSection) return;
+
+                const isMobile = window.innerWidth < 1200;
+
+                let offsetPosition;
+
+                if (isMobile) {
+                    // Mobile: align to top (just below nav)
+                    const navHeight = -20;
+                    offsetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                } else {
+                    // Desktop: center in viewport
+                    offsetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset
+                                     - (window.innerHeight / 2)
+                                     + (targetSection.offsetHeight / 2);
+                }
+
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
+});
+
+// ============================================
+// 3. EXPANDING GRID — Hover Logic
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.getElementById('expandingGrid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.grid-card');
+    let lastHoveredIndex = 0;
+
+    function setWideCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('wide', i === index);
+        });
+        lastHoveredIndex = index;
+    }
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => setWideCard(index));
+    });
+
+    grid.addEventListener('mouseleave', () => {
+        setWideCard(lastHoveredIndex);
+    });
+
+    let touchTimeout;
+    cards.forEach((card, index) => {
+        card.addEventListener('touchstart', () => {
+            if (card.classList.contains('wide')) return;
+            setWideCard(index);
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                setWideCard(lastHoveredIndex);
+            }, 3000);
+        });
+    });
+
+    setWideCard(0);
+});
+
+// ============================================
+// 4. PUDDLE RIPPLE EFFECT
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('rippleCanvas');
+    if (!canvas) return;
+
+    const wrapper = canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let ripples = [];
+
+    function resize() {
+        const rect = wrapper.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        width = canvas.width;
+        height = canvas.height;
+    }
+
+    function addRipple(x, y) {
+        ripples.push({
+            x, y,
+            radius: 2,
+            maxRadius: 45,
+            opacity: 0.3,
+            speed: 0.5 + Math.random() * 0.3,
+            life: 1,
+            decay: 0.01 + Math.random() * 0.005
+        });
+    }
+
+    function updateRipples() {
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const r = ripples[i];
+            r.radius += r.speed;
+            r.life -= r.decay;
+            r.opacity = r.life * 0.3;
+            if (r.life <= 0 || r.radius > r.maxRadius) {
+                ripples.splice(i, 1);
+            }
+        }
+    }
+
+    function drawRipples() {
+        ctx.clearRect(0, 0, width, height);
+        for (const r of ripples) {
+            const o = r.opacity;
+            const grad = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius);
+            grad.addColorStop(0, `rgba(154, 139, 128, ${o * 0.15})`);
+            grad.addColorStop(0.5, `rgba(154, 139, 128, ${o * 0.1})`);
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius * 0.9, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(154, 139, 128, ${o * 0.08})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        updateRipples();
+        drawRipples();
+        requestAnimationFrame(animate);
+    }
+
+    function handleMove(e) {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    wrapper.addEventListener('mousemove', handleMove);
+    wrapper.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        const rect = wrapper.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }, { passive: true });
+
+    animate();
+});
+
+// ============================================
+// 5. SCROLL-TRIGGERED REVEALS (Mobile‑Aware)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth < 768;
+    const elements = document.querySelectorAll('.fade-on-scroll, .reveal-dramatic, .reveal-top');
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: isMobile ? 0.05 : 0.15,
+        rootMargin: isMobile ? "0px" : "0px 0px -50px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+                observer.unobserve(el);
+            }
+        });
+    }, 100);
+});
+
+// ============================================
+// 6. GRID DOTS — Mobile / Swipe Layout
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.getElementById('expandingGrid');
+    const dotsContainer = document.getElementById('gridDots');
+    if (!grid || !dotsContainer) return;
+
+    let dotsBuilt = false;
+
+    function buildDots() {
+        if (dotsBuilt) return;
+
+        const cards = grid.querySelectorAll('.grid-card');
+        if (cards.length === 0) return;
+
+        // Build dots
+        cards.forEach((card, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to card ${index + 1}`);
+            dot.addEventListener('click', () => {
+                const cardWidth = cards[0].offsetWidth + 16;
+                grid.scrollTo({
+                    left: cardWidth * index,
+                    behavior: 'smooth'
+                });
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        // Sync dots with scroll
+        const dots = dotsContainer.querySelectorAll('.dot');
+        let ticking = false;
+        grid.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const cardWidth = cards[0].offsetWidth + 16;
+                    const activeIndex = Math.round(grid.scrollLeft / cardWidth);
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === activeIndex);
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        dotsBuilt = true;
+    }
+
+    function tearDownDots() {
+        if (!dotsBuilt) return;
+        dotsContainer.innerHTML = '';
+        dotsBuilt = false;
+    }
+
+    function handleBreakpoint() {
+        const isSwipeLayout = window.matchMedia('(max-width: 1300px)').matches;
+        if (isSwipeLayout) {
+            buildDots();
+        } else {
+            tearDownDots();
+        }
+    }
+
+    // Run on load
+    handleBreakpoint();
+
+    // Listen for breakpoint changes
+    const mq = window.matchMedia('(max-width: 1300px)');
+    mq.addEventListener('change', handleBreakpoint);
+});
+    
+
+</script>
+
+</body>
+</html>

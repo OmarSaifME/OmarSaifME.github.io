@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../s.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Saif: Drone Prototypes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body class="dark-mode">
+
+    <div class="content-wrapper" id="contentWrapper">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <nav class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../research.html">Research</a>
+                    <a href="../index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Projects Hero Ribbon -->
+        <section class="projects-hero">
+            <div class="container">
+                <div class="projects-hero-grid">
+                    <h1 class="projects-title reveal-top">Drone Prototypes</h1>
+                    <div class="projects-hero-line fade-on-scroll"></div>
+                    <p class="hero-about-text reveal-dramatic">
+                        Concept design of various drone prototypes, made using SolidWorks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+          <!-- ============================================
+          GALLERY — Simple Grid
+          ============================================ -->
+        <section class="gallery-grid-section">
+            <!-- Lightbox Overlay -->
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox-content">
+                    <button class="lightbox-close" id="lightboxClose">✕</button>
+                    <div class="lightbox-grid">
+                        <!-- Left: Description -->
+                        <div class="lightbox-info">
+                            <h2 id="lightboxTitle">Project Title</h2>
+                            <p id="lightboxTools">SolidWorks · KeyShot</p>
+                            <p id="lightboxDesc">A detailed description of the project goes here.</p>
+                        </div>
+                        <!-- Right: Enlarged Image -->
+                        <div class="lightbox-image">
+                            <img id="lightboxImg" src="" alt="Enlarged view">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container reveal-dramatic">
+                <div class="gallery-grid">
+                    <div class="gallery-item"
+                         data-title="Drone Prototype 1"
+                         data-tools="SolidWorks · Robotics"
+                         data-desc="Modeled with saving weight in mind, this drone
+                         has a truss-like design for its 4 arms, alongside 3D-printable
+                         simple landing gear."
+                         data-img="dp/d1.jpg">
+                        <img src="dp/d1.jpg" alt="Render 2">
+                        <div class="gallery-item-overlay">
+                            <h3>Drone Prototype 1</h3>
+                            <p class="tools">SolidWorks · Robotics</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item"
+                         data-title="Drone Prototype 2"
+                         data-tools="SolidWorks · Robotics"
+                         data-desc="The main body of this drone has two plates, joined
+                         by its rotor-arms. The configuration allows the drone to house
+                         heavier battery unit without compromising too much on its weight.
+                         Experimental design for blades has been entertained as well, since
+                         this model was developed when I was still learning the ropes of SolidWorks."
+                         data-img="dp/d2.jpg">
+                        <img src="dp/d2.jpg" alt="Render 2">
+                        <div class="gallery-item-overlay">
+                            <h3>Drone Prototype 2</h3>
+                            <p class="tools">SolidWorks · Robotics</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item"
+                         data-title="Drone Prototype 3"
+                         data-tools="SolidWorks · Robotics"
+                         data-desc="I wanted to explore bio-inspired design in traditional quadcopter with
+                         this concept. The prototype features bug-like perforated 'legs' as its landing
+                         gears, supporting a relatively heavy body on top of them for extended capacity and capabilities."
+                         data-img="dp/d3.jpg">
+                        <img src="dp/d3.jpg" alt="Render 2">
+                        <div class="gallery-item-overlay">
+                            <h3>Drone Prototype 3</h3>
+                            <p class="tools">SolidWorks · Robotics</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item"
+                         data-title="Drone Prototype 4"
+                         data-tools="SolidWorks · Robotics"
+                         data-desc="Single-plate main body with the controller embedded into it may allow this
+                         concept to fly for longer for a given battery capacity. Coupled with 4 unibody rotor-arm
+                         and landing gear, the concept offers design simplicity and decent weight performance."
+                         data-img="dp/d4.jpg">
+                        <img src="dp/d4.jpg" alt="Render 2">
+                        <div class="gallery-item-overlay">
+                            <h3>Drone Prototype 4</h3>
+                            <p class="tools">SolidWorks · Robotics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="future-content">
+            <p class="coming-soon">© 2026 Omar Saif · All Rights Reserved | Powered by Caffeine ☕</p>
+        </div>
+
+<script>
+// ============================================
+// 0. PAGE LOAD — Force Content to Show
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('contentWrapper');
+    if (wrapper) {
+        wrapper.classList.add('visible');
+        wrapper.style.opacity = '1';
+        wrapper.style.visibility = 'visible';
+    }
+
+    const overlay = document.querySelector('.intro-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    document.body.style.overflow = 'auto';
+});
+
+// ============================================
+// 1. NAVIGATION PILL — Scroll Behavior
+// ============================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    const ENTER_SCROLL = 80;
+    const EXIT_SCROLL = 40;
+
+    let isScrolled = false;
+    let ticking = false;
+    let settleTimer = null;
+
+    function handleScroll() {
+        const y = window.scrollY;
+
+        if (!isScrolled && y > ENTER_SCROLL) {
+            isScrolled = true;
+            header.classList.add("scrolled");
+            header.classList.remove("settled");
+
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(() => {
+                header.classList.add("settled");
+            }, 500);
+        } else if (isScrolled && y < EXIT_SCROLL) {
+            isScrolled = false;
+            clearTimeout(settleTimer);
+            header.classList.remove("settled");
+            header.classList.remove("scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    handleScroll();
+});
+
+// ============================================
+// 2. SMOOTH SCROLL TO SECTION
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            if (href.endsWith('.html') || href.includes('.html')) return;
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href;
+
+                if (targetId === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '/');
+                } else {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (targetSection.offsetHeight / 2);
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                        history.pushState(null, null, targetId);
+                    }
+                }
+            }
+        });
+    });
+});
+
+// ============================================
+// 3. EXPANDING GRID — Hover Logic
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.getElementById('expandingGrid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.grid-card');
+    let lastHoveredIndex = 0;
+
+    function setWideCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.toggle('wide', i === index);
+        });
+        lastHoveredIndex = index;
+    }
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => setWideCard(index));
+    });
+
+    grid.addEventListener('mouseleave', () => {
+        setWideCard(lastHoveredIndex);
+    });
+
+    let touchTimeout;
+    cards.forEach((card, index) => {
+        card.addEventListener('touchstart', () => {
+            if (card.classList.contains('wide')) return;
+            setWideCard(index);
+            clearTimeout(touchTimeout);
+            touchTimeout = setTimeout(() => {
+                setWideCard(lastHoveredIndex);
+            }, 3000);
+        });
+    });
+
+    setWideCard(0);
+});
+
+// ============================================
+// 4. PUDDLE RIPPLE EFFECT
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('rippleCanvas');
+    if (!canvas) return;
+
+    const wrapper = canvas.parentElement;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let ripples = [];
+
+    function resize() {
+        const rect = wrapper.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        width = canvas.width;
+        height = canvas.height;
+    }
+
+    function addRipple(x, y) {
+        ripples.push({
+            x, y,
+            radius: 2,
+            maxRadius: 45,
+            opacity: 0.3,
+            speed: 0.5 + Math.random() * 0.3,
+            life: 1,
+            decay: 0.01 + Math.random() * 0.005
+        });
+    }
+
+    function updateRipples() {
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const r = ripples[i];
+            r.radius += r.speed;
+            r.life -= r.decay;
+            r.opacity = r.life * 0.3;
+            if (r.life <= 0 || r.radius > r.maxRadius) {
+                ripples.splice(i, 1);
+            }
+        }
+    }
+
+    function drawRipples() {
+        ctx.clearRect(0, 0, width, height);
+        for (const r of ripples) {
+            const o = r.opacity;
+            const grad = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius);
+            grad.addColorStop(0, `rgba(154, 139, 128, ${o * 0.15})`);
+            grad.addColorStop(0.5, `rgba(154, 139, 128, ${o * 0.1})`);
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius * 0.9, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(154, 139, 128, ${o * 0.08})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+    }
+
+    function animate() {
+        updateRipples();
+        drawRipples();
+        requestAnimationFrame(animate);
+    }
+
+    function handleMove(e) {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    wrapper.addEventListener('mousemove', handleMove);
+    wrapper.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        const rect = wrapper.getBoundingClientRect();
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            addRipple(x, y);
+        }
+    }, { passive: true });
+
+    animate();
+});
+
+// ============================================
+// 5. SCROLL-TRIGGERED REVEALS (Mobile‑Aware)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth < 768;
+    const elements = document.querySelectorAll('.fade-on-scroll, .reveal-dramatic, .reveal-top');
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: isMobile ? 0.05 : 0.15,
+        rootMargin: isMobile ? "0px" : "0px 0px -50px 0px"
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('visible');
+                observer.unobserve(el);
+            }
+        });
+    }, 100);
+});
+
+// ============================================
+// 6. CINEMATIC DIVIDER — Parallax Zoom + Blur
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const divider = document.querySelector('.cinematic-divider');
+    if (!divider) return;
+
+    let ticking = false;
+
+    function updateDivider() {
+        const rect = divider.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const visiblePercent = Math.min(Math.max((viewportHeight - rect.top) / viewportHeight, 0), 1);
+
+        const zoom = 1 + (visiblePercent * 0.08);
+        const blur = visiblePercent * 2;
+
+        divider.style.transform = `scale(${zoom})`;
+        divider.style.filter = `blur(${blur}px)`;
+        divider.style.opacity = 0.85 - (visiblePercent * 0.15);
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateDivider();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    updateDivider();
+});
+
+// ============================================
+// GALLERY LIGHTBOX — Click to Open
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxTools = document.getElementById('lightboxTools');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    function openLightbox(element) {
+        // Read data directly from the clicked element
+        const title = element.dataset.title;
+        const tools = element.dataset.tools;
+        const desc = element.dataset.desc;
+        const img = element.dataset.img;
+
+        lightboxImg.src = img;
+        lightboxTitle.textContent = title;
+        lightboxTools.textContent = tools;
+        lightboxTools.className = 'tools';
+        lightboxDesc.textContent = desc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Click on gallery item — pass the element itself
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            openLightbox(this);
+        });
+    });
+
+    // Close button
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Click outside to close
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+});
+</script>
+
+</body>
+</html>
